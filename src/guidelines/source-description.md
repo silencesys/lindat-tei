@@ -2,7 +2,7 @@
 
 Contains either a description of a single witness referred to within the critical apparatus, or a list of witnesses which is to be referred to by a single sigil.
 All witnesses in `sourceDesc` must be listed inside an `listWit` element as can be seen in the [example](./tei-header.md#source-descriptio). The `xml:id` attribute
-should always contain an unique manuscript identifier - sigla. All below described tags **must** be inside the `msDesc` element.
+should always contain an unique manuscript identifier - siglum. All below described tags **must** be inside the `msDesc` element.
 
 ```xml
 <witness xml:id="A17">
@@ -67,7 +67,7 @@ Contains the name of a collection of manuscripts or other objects, not necessari
 ```xml
 <idno>A 17</idno>
 ```
-Supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.
+Supplies any form of an identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.
 
 ## Manuscript contents
 ```xml
@@ -133,7 +133,7 @@ Under the general heading ‘physical description’ we subsume a large number o
   </p>
 </objectDesc>
 ```
-The `objectDesc` element is used to group together those parts of the physical description which relate specifically to the text-bearing object, its format, constitution, layout, etc. The `objectDesc` element is used for grouping elements relating to the physicality of a text-bearing object as part of a manuscript description. If a full description of an object (text-bearing or not) is desired, the more general object element may be preferred. The `form` attribute is used to describe form of the manuscript, see table below.
+The `objectDesc` element is used to group together those parts of the physical description which relate specifically to the text-bearing object, its format, constitution, layout, etc. The `objectDesc` element is used for grouping the elements relating to the physicality of a text-bearing object as part of a manuscript description. If a full description of an object (text-bearing or not) is desired, the more general object element may be preferred. The `form` attribute is used to describe form of the manuscript, see table below.
 
 | Form |
 |:- |
@@ -146,7 +146,7 @@ The `objectDesc` element is used to group together those parts of the physical d
 ```xml
 <material>Parchment</material> codex with half <material>goat-leather</material>.
 ```
-The element should be used inside a paragraph to tag any specific physical material of which manuscript is composed. Brief list of materials can be found [here](./materials.md#folio-materials).
+The element should be used inside a paragraph to tag any specific physical material of which manuscript is composed. A brief list of materials can be found [here](./materials.md#folio-materials).
 
 ### Hands description
 ```xml
@@ -180,7 +180,7 @@ an unique value, thus it is recommended to identify scribers with prefix startin
 ```
 As above the `<handNote>` element is used to describe the scribe, but because it is known which part was written by which
 scribe. It can be used `<locus>` element to specify parts which were written with this hand, see [`<locus>`](#locus) for more information about the element.
-Also attribute `scope` can be used to specify how widely was this hand used in manuscript.
+Also the attribute `scope` can be used to specify how widely was this hand used in manuscript.
 
 | scopes | description |
 | :- | :- |
@@ -189,7 +189,7 @@ Also attribute `scope` can be used to specify how widely was this hand used in m
 | minor | this hand is used occasionally in the manuscript
 
 If you know other works written by the same hand. It can be noted inside the `<handNote>` element by
-providing the title of the other within the `<title>` element followed by `ref` element specifiying the location.
+providing the title of the other within the `<title>` element followed by `ref` element specifying the location.
 See example below.
 
 ```xml
@@ -229,12 +229,12 @@ The above elements are used to record information about the history of a manuscr
   </p>
 </origin>
 ```
-Contains any descriptive or other information concerning the origin of a manuscript, manuscript part, or other object. The
-description should be written in prose inside the paragraph `<p>`. However, additional tags that specify informations can be
+Contains any descriptive or other information concerning the origin of a manuscript, a manuscript part, or another object. The
+description should be written in prose inside the paragraph `<p>`. However, additional tags that specify information can be
 used.
 
 #### Original place
-Contains any form of place name, used to identify the place of origin for a manuscript, manuscript part, or other object. Follow
+Contains any form of place name, used to identify the place of origin for a manuscript, a manuscript part, or other object. Follow
 similar rules as any other element specifying location, see [this example](#manuscript-identifier).
 
 #### OrigDate
@@ -245,7 +245,7 @@ rules as any other date element, see [this example](./tei-header.md#date).
 ```xml
 <p>Given to <name type=“person“>W.Olleyf</name> by <name type=“person“>William Ebchester</name>, Prior (1446-56) and later belonged to <name type=“person“>Henry Dalton</name>, Prior of <name type=“place“>Holy Island (Lindisfarne)</name> according to inscriptions on ff. 4v and 5.</p>
 ```
-Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, manuscript part, or other object after its creation but before its acquisition. It should be written in prose inside a paragraph `<p>` and may contain additional tags.
+Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, a manuscript part, or another object after its creation but before its acquisition. They should be written in prose inside a paragraph `<p>` and may contain additional tags.
 
 #### Name
 ```xml

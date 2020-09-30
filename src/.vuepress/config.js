@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Medieval Manuscripts',
+  title: 'UŘLS TEI Cookbook',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
