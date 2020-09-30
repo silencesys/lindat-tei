@@ -112,7 +112,7 @@ Valid `editionStmt` should look like:
 ```
 
 ## Publication statement
-The publicationStmt element is the thirdth component of the fileDesc element and is mandatory. Its function is to name the agency by which a resource is made available (for example, a publisher or distributor) and to supply any additional information about the way in which it is made available such as licensing conditions, identifying numbers, etc.
+The publicationStmt element is the third component of the fileDesc element and is mandatory. Its function is to name the agency by which a resource is made available (for example, a publisher or distributor) and to supply any additional information about the way in which it is made available such as licensing conditions, identifying numbers, etc.
 
 #### Published
 ```xml
