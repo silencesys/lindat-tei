@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/xsd/tei_all.xsd" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/xsd/tei_all.xsd" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="lat">Somniale Danielis</title>
+                <title xml:lang="eng">Dreambook of Daniel</title>
+                <author>Unknown</author>
+                <editor>Martin Roček</editor>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <title xml:lang="eng">Somniale Danielis: the Medieval Dreambook</title>
+                    <date when="1981-01-01">1981</date>
+                    <note>Edition describes two oldest fragments of the Somniale Danielis</note>
+                </edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Faculty of Arts</publisher>
+                <pubPlace>
+                    <country>Czech Republic</country>
+                    <region><!-- Can be set for countries which are divided to regions --></region>
+                    <settlement>Prague</settlement>
+                </pubPlace>
+                <date when="2020-09-30">2020</date>
+            </publicationStmt>   
+            <sourceDesc>
+                <listWit>
+                    <witness xml:id="A17">
+                        <msDesc>
+                            <msIdentifier>
+                                <country>Czech Republic</country>
+                                <region><!-- Region can be omnited if not set --></region>
+                                <settlement>Třeboň</settlement>
+                                <institution>Státní oblastní archiv Třeboň</institution>
+                                <repository><!-- Can be omnited if not specified --></repository>
+                                <collection>Rukopisy Třeboň</collection>
+                                <idno>A 17</idno>
+                            </msIdentifier>
+                            <msContents>
+                              <summary></summary>
+                              <msItem n="1">
+                                <locus from="4v" to="23r" facs="f4v.jpg ...">ff. 4v-23r</locus>
+                                <title xml:lang="lat">Somniale Danielis</title>
+                              </msItem>
+                            </msContents>
+                            <physDesc>
+                              <objectDesc form="codex">
+                                <p>
+                                  <material>
+                                    Parchment
+                                  </material> codex with half  
+                                </p>
+                              </objectDesc>
+                              <handDesc hands="1">
+
+                              </handDesc>
+                            </physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text xmlns="http://www.tei-c.org/ns/1.0">
+      <body>
+         <div></div>
+      </body>
+    </text>
+</TEI>

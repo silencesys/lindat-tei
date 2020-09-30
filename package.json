@@ -1,0 +1,19 @@
+{
+  "name": "lindat-medieval-manuscripts",
+  "version": "0.0.1",
+  "description": "Guidelines for manuscript description incorporating TEI.",
+  "main": "index.js",
+  "authors": {
+    "name": "Martin Roček",
+    "email": "martin.rocek@ff.cuni.cz"
+  },
+  "repository": "/LINDAT - Medieval Manuscripts",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
