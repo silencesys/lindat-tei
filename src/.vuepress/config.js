@@ -56,7 +56,14 @@ module.exports = {
             'additions-deletions',
             'translations',
             'materials',
-            'language-codes'
+          ]
+        },
+        {
+          title: 'Abbreviations',
+          collapsable: false,
+          children: [
+            'language-codes',
+            'bible-short'
           ]
         }
       ],

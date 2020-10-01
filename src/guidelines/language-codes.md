@@ -1,6 +1,6 @@
-# Language codes
+# Language abbreviations
 
-This list contains commonly used languages and **ISO-639-B** abbreviations that are assigned to them.
+This list contains commonly used languages and their **ISO-639-3/B** abbreviations.
 
 | ISO language name | ISO code | Note |
 |:-|:-:|:- |
