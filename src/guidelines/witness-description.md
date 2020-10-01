@@ -148,7 +148,7 @@ The `objectDesc` element is used to group together those parts of the physical d
 ```xml
 <material>Parchment</material> codex with half <material>goat-leather</material>.
 ```
-The element should be used inside a paragraph to tag any specific physical material of which manuscript is composed. A brief list of materials can be found [here](./materials.md#folio-materials).
+The element should be used inside a paragraph to tag any specific physical material of which manuscript is composed. Possible materials can be: parchment, paper, calfskin, goatskin, mixed.
 
 ### Hands description
 ```xml

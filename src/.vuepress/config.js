@@ -36,10 +36,6 @@ module.exports = {
       {
         text: 'Guidelines',
         link: '/guidelines/',
-      },
-      {
-        text: 'Config',
-        link: '/config/'
       }
     ],
     sidebar: {
@@ -49,13 +45,26 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'common-structure-and-elements',
+            'common-structure-and-elements'
+          ]
+        },
+        {
+          title: 'Meta-information',
+          collapsable: false,
+          children: [
             'tei-header',
-            'source-description',
-            'tei-body',
-            'additions-deletions',
+            'witness-description',
+            'people-and-places',
+            'bibliography',
+          ]
+        },
+        {
+          title: 'Content of the edition',
+          collapsable: false,
+          children: [
+            'text-structure',
+            'text-corrections',
             'translations',
-            'materials',
           ]
         },
         {
@@ -76,5 +85,28 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-  ]
+  ],
+
+  chainWebpack: (config, isServer) => {
+    config.module
+      .rule('xml')
+      .test(/\.xml$/)
+      .use('file-loader')
+      .loader('file-loader')
+      .options({
+        name: `[path][name].[ext]`
+      }
+    );
+
+    config.module.rule('vue')
+    .uses.store
+    .get('vue-loader').store
+    .get('options').transformAssetUrls = {
+      video: ['src', 'poster'],
+      source: 'src',
+      img: 'src',
+      image: ['xlink:href', 'href'],
+      a: 'href'
+    };
+  },
 }

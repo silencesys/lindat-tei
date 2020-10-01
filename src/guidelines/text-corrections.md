@@ -10,7 +10,7 @@ Sometimes it is needed to mark changes that are differentiating readings from ea
 ```xml
 <choice></choice>
 ```
-Groups a number of alternative encodings for the same point in a text. This element is often used for abbreviations and normalisations.
+The `choice` element groups a number of alternative encodings for the same point in a text. This element is often used for abbreviations and normalisations.
 
 ## Abbreviations
 ```xml{2}
@@ -28,7 +28,7 @@ element must be used if expansion of the abbreviation is provided.
   <expan>Arthemand<ex>us<ex></expan>
 </choice>
 ```
-Sometimes is desirable to expand the abbreviation, that can be achieved by using the `expan` element. However, the element can not stand alone and the
+Sometimes, it is desirable to expand the abbreviation, that can be achieved by using the `expan` element. However, the element can not stand alone, and the
 abbreviation must be defined inside the `choice` group within the `abbr` element. The additional element `ex` contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. Can be omitted.
 
 ## Scribal interventions
@@ -67,7 +67,7 @@ Groups one or more deletions with one or more additions when the combination is 
 
 ## Normalisation and regularization
 ### Correcting mistakes
-Sometimes an apparently inacurrate or incorrect text can be found in the manuscript and it is up to us if we would like to correct it. For that purpuse there are following elements.
+Sometimes an apparently inaccurate or incorrect text can be found in the manuscript and it is up to us if we would like to correct it. For that purpose there are following elements.
 #### Marking inacurrate text
 ```xml{3}
 Annolos vel armillas dare videre vel capere dolorem
@@ -77,7 +77,7 @@ Annolos vel armillas dare videre vel capere dolorem
 </choice>
 significat.
 ```
-To mark the normalisation inside our file we can simply use the `sic` element alone. It should contain the reproduced text altough apparently incorrect or inaccurate. We can also suggest correction and for that purpose the element `corr` should be used, see below.
+To mark the normalisation inside our file we can simply use the `sic` element alone. It should contain the reproduced text although apparently incorrect or inaccurate. We can also suggest correction and for that purpose the element `corr` should be used, see below.
 
 ::: warning Important
 When the correction is suggested, both elements `sic` and `corr` must be wrapped inside the `choice` element as can be seen in examples.
@@ -95,7 +95,7 @@ significat.
 The element `corr` contains the correct form of a passage apparently erroneous in the copy text.
 
 ### Regularization of the text
-In some cases regularization might be usefull and for that purpose can be used following elements.
+In some cases, the regularization might be usefull and for that purpose can be used following elements.
 #### Marking original reading
 ```xml{2}
 The <choice>
@@ -119,7 +119,7 @@ Contains a reading which has been regularized or normalized in some sense.
 ```xml
 I <supplied reason="omitted-in-original">was</supplied> lazy when I wrote this text.
 ```
-Signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. In above example the word _was_ was missing.
+Signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. In the above example the word _was_ was missing.
 
 | Reasons | Description
 | :- | :-
@@ -169,8 +169,7 @@ I <damage reason="fire" extent="1 word">
   <supplied reason="burnt-hole-in-original">was</supplied>
 </damage> lazy when I wrote this text.
 ```
-Signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe.
-Similarly as the forementioned elements the `supplied` element has attribute `reason`. In this case short description of the reason should be provided.
+Signifies text supplied by the transcriber or editor for any reason; for example: because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. Similarly, as the forementioned elements the `supplied` element has attribute `reason`. In this case short description of the reason should be provided.
 
 ::: tip
 Note that whitespaces are separators, that is why the phrases describing the reason are hyphenated.
@@ -178,7 +177,7 @@ Note that whitespaces are separators, that is why the phrases describing the rea
 
 ### Damaged text is partially legible
 When the text is partially legible, following scheme should be used:
-+ Use `damage` or `del` elements to markup the damaged or deleted parts - [see damage](#damaged-text-is-illegible-but-text-is-supplied), [deletion](#deletions)
++ Use `damage` or `del` elements to mark up the damaged or deleted parts - [see damage](#damaged-text-is-illegible-but-text-is-supplied), [deletion](#deletions)
 + use `gap` to mark up the illegible part(s), or `supplied` if you wish to supply text - [see gap](#damaged-text-is-illegible-no-text-is-supplied)
 + use `unclear` to mark up the parts of the text which cannot be transcribed with perfect confidence.
 

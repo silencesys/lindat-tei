@@ -2,6 +2,8 @@
 
 It is recommended to stick with the vulgata abbreviations. The list of abbreviations is taken from the recommendations of the [Listy filologické](http://www.ics.cas.cz/upload/__files/pokyny_pro_autory_listy_filologicke_2017.pdf).
 
+[[toc]]
+
 ## Old testament
 | Abbreviation Vulgata | Abbreviation ČEP | Czech name
 | :- | :- | :-
@@ -45,7 +47,7 @@ It is recommended to stick with the vulgata abbreviations. The list of abbreviat
 | Za | Za | Zacharjáš
 | Mal | Mal | Malachiáš
 
-## Deuterocanonical books
+### Deuterocanonical books
 | Abbreviation Vulgata | Abbreviation ČEP | Czech name
 | :- | :- | :-
 | Tb | Tób | Tóbit - Tóbijáš

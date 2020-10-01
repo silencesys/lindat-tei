@@ -1,6 +1,6 @@
 # Translations
 
-To provide translation with the original latin text the document's body should be divided into two parts, the original and translation. For that purpose
+To provide translation with the original Latin text the document's body should be divided into two parts, the original and translation. For that purpose
 `div` elements should be used as shown in the example below. The `type` attribute and the `xml:lang` are considered mandatory as they provide information
 about the text contained inside. For translations should be `type` set to value `translation` and for the original text to `original`. The `xml:lang` attribute
 must contain valida ISO-639 language abbreviation, [see the table](./language-codes).
