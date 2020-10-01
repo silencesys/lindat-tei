@@ -24,6 +24,8 @@ The TEI header `<teiHeader>` is mandatory and contains descriptive meta-informat
       </sourceDesc>
     </fileDesc>
   </teiHeader>
+  <!-- Body, see TEI Body chapter -->
+</TEI>
 ```
 
 ## Title statement
@@ -150,6 +152,19 @@ Valid publication statement should look like
 </publicationStmt>
 ```
 
+## Encoding description
+```xml
+<encodingDesc>
+  <projectDesc>
+    <p><!-- General project description, optional --></p>
+  </projectDesc>
+  <refsDecl></refsDecl>
+</encodingDesc>
+```
+Documents the relationship between an electronic text and the source or sources from which it was derived. It can be
+used to further describe principles that were used when the text was encoded. The text can be written in prose in
+paragraphs `p` or sub-components.
+
 ## Source description
 ```xml
 <sourceDesc>
@@ -159,7 +174,7 @@ Valid publication statement should look like
   </listWit>
 </sourceDesc>
 ```
-The `sourceDesc` element is the fourth and final component of the fileDesc element. It is a mandatory element and is used to record details of the source or sources from which a computer file is derived. This might be a printed text or a manuscript, another computer file, an audio or video recording of some kind, or a combination of these. An electronic file may also have no source, if what is being catalogued is an original text created in an electronic form. The paragraph `<p>` element can and should be used for the general description of the sources, then each witness should be listed in the `listWit` list.
+The `sourceDesc` element is the fifth and final component of the fileDesc element. It is a mandatory element and is used to record details of the source or sources from which a computer file is derived. This might be a printed text or a manuscript, another computer file, an audio or video recording of some kind, or a combination of these. An electronic file may also have no source, if what is being catalogued is an original text created in an electronic form. The paragraph `<p>` element can and should be used for the general description of the sources, then each witness should be listed in the `listWit` list.
 
 
 

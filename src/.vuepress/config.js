@@ -52,6 +52,9 @@ module.exports = {
             'common-structure-and-elements',
             'tei-header',
             'source-description',
+            'tei-body',
+            'additions-deletions',
+            'translations',
             'materials',
             'language-codes'
           ]

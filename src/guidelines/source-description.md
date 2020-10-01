@@ -103,7 +103,9 @@ inside the `<msItem>` element should be kept.
 ```
 Defines a location within a manuscript, manuscript part, or other object typically as a (possibly discontinuous) sequence of folio references.
 Attributes `from` and `to` should point to the location of the text in manuscript. Attribute `facs` can be used to link locus with a particular image.
-**In case you will link locus to images, please include these images with your XML file as well**
+::: warning Important
+In case you will link locus to images, please include these images with your XML file as well
+:::
 
 #### Title
 ```xml
