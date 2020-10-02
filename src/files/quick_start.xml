@@ -98,6 +98,10 @@
         </fileDesc>
     </teiHeader>
     <text xmlns="http://www.tei-c.org/ns/1.0">
+      <!--
+        text of the document
+        see: https://lindat.coders.tools/guidelines/text-structure.html
+      -->
       <body>
          <div xml:lang="lat" type="original">
 
