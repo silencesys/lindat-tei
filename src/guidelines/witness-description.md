@@ -14,6 +14,9 @@ should always contain an unique manuscript identifier - siglum. All below descri
     <msCotents>
       <!-- Description of intellectual content -->
     </msContents>
+    <physDesc>
+      <!-- Physical description -->
+    </physDesc>
   </msDesc>
 </witness>
 ```
@@ -128,11 +131,13 @@ like in previous cases the `xml:lang` attribute must contain valid ISO-639-3 lan
 For list of language codes see [language codes](./language-codes.md).
 
 ## Physical Description
-```xml
-<physDesc>
-  <objectDesc form="codex"></objectDesc>
-  <handDesc hands="1"></handDesc>
-</physDesc>
+```xml{2-4}
+<msDesc>
+  <physDesc>
+    <objectDesc form="codex"></objectDesc>
+    <handDesc hands="1"></handDesc>
+  </physDesc>
+</msDesc>
 ```
 Under the general heading ‘physical description’ we subsume a large number of different aspects generally regarded as useful in the description of a given manuscript. These include:
 + aspects of the form, support, extent, and quire structure of the manuscript object and of the way in which the text is laid out on the page
