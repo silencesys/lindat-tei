@@ -28,7 +28,6 @@ To include bibliographic citations in the document a `listBibl` can be used. It 
 ::: details See the full source description
 ```xml
 <sourceDesc>
-  <p>General description</p>
   <listWit>
     <witness xml:id="A17"></witness>
   </listWit>

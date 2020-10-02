@@ -71,7 +71,7 @@ Almost every text contains names, whether they are the names of people, places o
 
 ### Universal name element
 ```xml
-<name type="place" ref="#GeoPrague">Prague</name>
+<name type="place" ref="#Place_Prague">Prague</name>
 ```
 Contains a proper noun or noun phrase.
 
