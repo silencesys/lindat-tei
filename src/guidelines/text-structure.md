@@ -101,7 +101,7 @@ It should contain an absolute or relative place name. **The `placeName` element 
 ```
 It should contain an organization name. **The `orgName` element is a equivalent to `<name type="org"></name>`.** Additional level of description can be achieved in a similar fashion as with the person and place, see [list of organizations](./people-and-places.md#list-of-organizations). The `ref` attribute should be used to link the place to the `listOrg` in the `teiHeader`.
 
-::: warning Information duplication
+::: warning Do not duplicate!
 As all three forementioned elements can be described with additional elements in similar fashion as the items in lists (`listPerson`, `listPlace`, `listOrg`) do not be tempted to duplicate the infomration. These additional elements should be only used to achieve higher level of detail in the markup if the information is present in the original text.
 :::
 
