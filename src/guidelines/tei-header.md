@@ -43,7 +43,7 @@ as needed, but the `xml:lang` should be always set to a different language.
 
 #### Author
 ```xml
-<author xml:id="Author_Rocek">Martin Roček</author>
+<author xml:id="Author_MartinRocek">Martin Roček</author>
 ```
 The element should containt name of the author of the digital text in following format `name surname`.
 To link to the author later in text `xml:id` attribute can be used. It is recommended to prefix
@@ -51,7 +51,7 @@ name of the author with letter `Author_`, see example above.
 
 #### Editor
 ```xml
-<editor xml:id="Editor_Rocek">Martin Roček</editor>
+<editor xml:id="Editor_MartinRocek">Martin Roček</editor>
 ```
 The element contains name of the editor of the digital text in format `name surname`. Similarly, as in case of authors, `xml:id` can be used
 to link to the editor later in text. It is also recommended to prefix name of the editor with letter `Editor_`. Can be omitted if there are
@@ -166,7 +166,7 @@ Same as [before](#date), date should contain information when the item was publi
     <region><!-- Can be set for countries which are divided to regions --></region>
     <settlement>Prague</settlement>
   </pubPlace>
-  <date when="2020-09-30">2020</date>
+  <date when="2020-09-30">30. září 2020</date>
 </publicationStmt>
 ```
 :::
@@ -187,7 +187,6 @@ paragraphs `p` or sub-components.
 ## Source description
 ```xml
 <sourceDesc>
-  <p>General description</p>
   <listWit>
     <witness xml:id="A17"></witness>
   </listWit>
@@ -200,7 +199,6 @@ The `sourceDesc` element is the fifth and final component of the fileDesc elemen
 This source description contains additional lists which are described in full on following pages.
 ```xml
 <sourceDesc>
-  <p>General description</p>
   <listWit>
     <witness xml:id="A17"></witness>
   </listWit>
