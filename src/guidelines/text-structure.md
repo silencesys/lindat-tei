@@ -251,7 +251,7 @@ Contains a single reading within a textual variation. Likewise the `lemma` eleme
 `wit` that will point to the list of witnesses.
 
 ::: tip
-Note that IDs of different sources with the same reading are separated with space.
+Note that IDs of different sources with the same reading are separated withspace.
 :::
 
 Readings can contain additions, corrections and deletions, all these topics are further described on the [Text corrections](./additions-deletions.md) page.

@@ -8,11 +8,11 @@ must contain valida ISO-639 language abbreviation, [see the table](./language-co
 ```xml{7-10}
 <text>
   <body>
-    <div type="original" xml:lang="lat">
+    <div xml:lang="lat" type="original">
     <p xml:id="p1">Arma portare in sompno honorem significat</p>
     <!-- and so on... -->
     </div>
-    <div type="translation" xml:lang="cze">
+    <div xml:lang="cze" type="translation">
       <p ana="#p1">Nosit zbraně ve snu značí slávu</p>
       <!-- a tak dále... -->
     </div>
@@ -27,3 +27,6 @@ The translation **MUST** always be separated from the original text.
 ::: tip
 Same rules as for the original text can be applied for translation.
 :::
+
+## Translating inside the text
+lem>reading=type"translation"
