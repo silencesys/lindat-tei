@@ -54,6 +54,28 @@
                       list of witnesses
                       see: https://lindat.coders.tools/guidelines/witness-description.html
                     -->
+                    <msDesc>
+                      <msIdentifier>
+                        <country>Czech Republic</country>
+                        <region><!-- Region can be omnited if not set --></region>
+                        <settlement>Třeboň</settlement>
+                        <institution>Státní oblastní archiv Třeboň</institution>
+                        <repository><!-- Can be omnited if not specified --></repository>
+                        <collection>Rukopisy Třeboň</collection>
+                        <idno>A 17</idno>
+                      </msIdentifier>
+                      <msContents>
+                        <summary></summary>
+                        <msItem n="1">
+                          <locus>fols. 5r-7v</locus>
+                          <title>An ABC</title>
+                          <bibl>
+                           <title>IMEV</title>
+                           <biblScope>239</biblScope>
+                          </bibl>
+                         </msItem>
+                      </msContents>
+                    </msDesc>
                   </witness>
                   <!-- add more witnesses if applicable -->
                 </listWit>

@@ -8,21 +8,30 @@ should always contain an unique manuscript identifier - siglum. All below descri
 <witness xml:id="A17">
   <msDesc>
     <!-- Manuscript description -->
+    <msIdentifier>
+      <!-- Manuscript identification -->
+    </msIdentifier>
+    <msCotents>
+      <!-- Description of intellectual content -->
+    </msContents>
   </msDesc>
 </witness>
 ```
 
 ## Manuscript identifier
-```xml
-<msIdentifier>
-  <country>Czech Republic</country>
-  <region><!-- Region can be omnited if not set --></region>
-  <settlement>Třeboň</settlement>
-  <institution>Státní oblastní archiv Třeboň</institution>
-  <repository><!-- Can be omnited if not specified --></repository>
-  <collection>Rukopisy Třeboň</collection>
-  <idno>A 17</idno>
-</msIdentifier>
+```xml{2-9}
+<msDesc>
+  <msIdentifier>
+    <country>Czech Republic</country>
+    <region><!-- Region can be omnited if not set --></region>
+    <settlement>Třeboň</settlement>
+    <institution>Státní oblastní archiv Třeboň</institution>
+    <repository><!-- Can be omnited if not specified --></repository>
+    <collection>Rukopisy Třeboň</collection>
+    <idno>A 17</idno>
+  </msIdentifier>
+  <msCotents></msContents>
+</msDesc>
 ```
 
 The msIdentifier element is intended to provide an unambiguous means of uniquely identifying a particular manuscript. This may be done in a structured way, by providing information about the holding institution and the call number, shelfmark, or other identifier used to indicate its location within that institution. Alternatively, or in addition, a manuscript may be identified simply by a commonly used name.
@@ -70,13 +79,16 @@ Contains the name of a collection of manuscripts or other objects, not necessari
 Supplies any form of an identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.
 
 ## Manuscript contents
-```xml
-<msContents>
-  <summary></summary>
-  <msItem>
-    <!-- Manuscript item -->
-  </msItem>
-</msContents>
+```xml{3-8}
+<msDesc>
+  <msIdentifier></msIdentifier>
+  <msContents>
+    <summary></summary>
+    <msItem>
+      <!-- Manuscript item -->
+    </msItem>
+  </msContents>
+</msDesc>
 ```
 
 The msContents element is used to describe the intellectual content of a manuscript or manuscript part. It comprises either a series of informal prose paragraphs or a series of msItem or msItemStruct elements, each of which provides a more detailed description of a single item contained within the manuscript. These may be prefaced, if desired, by a summary element, which is especially useful where one wishes to provide an overview of a manuscript's contents and describe only some of the items in detail.
