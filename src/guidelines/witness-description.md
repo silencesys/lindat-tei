@@ -131,7 +131,7 @@ like in previous cases the `xml:lang` attribute must contain valid ISO-639-3 lan
 For list of language codes see [language codes](./language-codes.md).
 
 ## Physical Description
-```xml{2-4}
+```xml{2-5}
 <msDesc>
   <physDesc>
     <objectDesc form="codex"></objectDesc>
