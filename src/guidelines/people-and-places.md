@@ -140,7 +140,7 @@ The `person` element is further described in the [TEI documentation guide](https
 
 ## Describing places
 ```xml
-<place xml:id="UniFr">
+<place xml:id="Place_UniFr">
   <placeName xml:lang="fre">Université de Fribourg</placeName>
   <placeName xml:lang="ger">Universität Freiburg</placeName>
   <settlement>Fribourg</settlement>

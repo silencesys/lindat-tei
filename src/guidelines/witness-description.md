@@ -268,7 +268,7 @@ Contains any descriptive or other information concerning a single identifiable e
 
 #### Name
 ```xml
-<name type="place" ref="#GeoPrague">Name</name>
+<name type="place" ref="#Place_Prague">Name</name>
 ```
 Contains a proper noun or noun phrase.
 
