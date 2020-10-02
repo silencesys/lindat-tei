@@ -22,7 +22,7 @@ should always contain an unique manuscript identifier - siglum. All below descri
 ```
 
 ## Manuscript identifier
-```xml{2-9}
+```xml{2-10}
 <msDesc>
   <msIdentifier>
     <country>Czech Republic</country>
@@ -189,7 +189,7 @@ an unique value, thus it is recommended to identify scribers with prefix startin
 #### Scribers are known
 ```xml
 <handDesc hands="2">
- <handNote xml:id="S1Crux" scope="major">
+ <handNote xml:id="S2Eirsp" scope="major">
   <p>The first part of the manuscript, <locus from="1v" to="72v:4">fols
        1v-72v:4</locus>, is written in a practised Icelandic Gothic bookhand. This hand
      is not found elsewhere.</p>
