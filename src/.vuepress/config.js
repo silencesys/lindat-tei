@@ -36,6 +36,10 @@ module.exports = {
       {
         text: 'Guidelines',
         link: '/guidelines/',
+      },
+      {
+        text: 'Examples',
+        link: '/examples/'
       }
     ],
     sidebar: {
@@ -76,6 +80,15 @@ module.exports = {
           ]
         }
       ],
+      '/examples/': [
+        {
+          title: 'Partial examples',
+          collapsable: false,
+          children: [
+            'somniale'
+          ]
+        }
+      ]
     }
   },
 

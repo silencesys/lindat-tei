@@ -145,17 +145,15 @@ The only mandatory element in the citation part. It must contain a phrase or pas
 
 ::: warning Important
 It may happen that a reference is made without actually quoting it. Since this is not actual quotation, we should avoid
-using `quote` element, but `ref` and `bibl` elements can still be used. This kind of citation should still be inside a `cit` element for the sake of consistency.
+using `quote` element, but `ref` and `bibl` elements can still be used.
 ::: details See the example
 ```xml{2}
-<cit type="ascribed">
   Augustine says he stole pears in a garden when he was a young man
   <ref target="#AugConf">
     <bibl type="source">Aug., <title>Confessiones</title>, II, 4</bibl>
   </ref>
-</cit>
 ```
-Note that `quote` element was omitted and only `cit` and `ref` were kept.
+Note that `quote` and `cit` elements were omitted and `ref` was kept.
 :::
 
 #### Reference

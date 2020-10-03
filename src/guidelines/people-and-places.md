@@ -26,11 +26,12 @@ It is strongly advised to also include a list of people, places and organisation
 ```xml
 <person xml:id="Person_A2E" sex="male">
   <persName>
-    <foreName>Aragorn</foreName>
+    <forename>Aragorn</forename>
     <genName>II</genName>
     <genName>Elassar</genName>
   </persName>
   <age value="210" notAfter="3000">210 years old</age>
+  <socecStatus>Chieftain of the Dúnedain, King of the Reunited Kingdom</socecStatus>
   <note>
     Aragorn II, son of Arathorn II and Gilraen, also known as Elessar and Strider, was the 16th Chieftain of the Dúnedain of the North;
     later crowned King Elessar Telcontar (March 1, 2931 - FO 120 or SR 1541), the 26th King of Arnor and 35th King of Gondor -
@@ -43,13 +44,17 @@ Additional descriptive elements can be used. The attribute `sex` can be used to 
 
 ### Name of the person
 ```xml{1,5}
-<persName>
+<persName xml:lang="eng">
   <forename>Aragorn</forename>
   <genName>II</genName>
   <addName>Elassar</addName>
 </persName>
 ```
 The `persName` element should contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. For this purpose additional descriptive elements should be used.
+
+:::tip
+ In case there are different variants of name in each language used in the document, we can repeat the `persName` element with set language attribute `xml:lang`.
+ :::
 
 #### Forename
 ```xml
@@ -113,6 +118,16 @@ The `placeName` contains an absolute or relative place name.
 </death>
 ```
 Person descriptions can contain information about it's birth and death. These elements can include additional describing elements as in example. More information about these elements can be found in the [Place](#place) section.
+
+### Socio-economical status
+```xml
+<socecStatus>King of Babylon, King of Sumer and Akkad, King of the Universe</socecStatus>
+```
+The element `socecStatus` contains an informal description of a person's perceived social or economic status.
+
+::: tip
+The content of this element may be used as an alternative to the more formal specification made possible by its attributes; it may also be used to supplement the formal specification with commentary or clarification.
+:::
 
 ### Age
 ```xml

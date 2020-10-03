@@ -2,7 +2,7 @@
 
 To include bibliographic citations in the document a `listBibl` can be used. It should be located inside the `sourceDesc` element inside the `teiHeader`.
 
-```xml{3}
+```xml
 <listBibl>
   <head>Select bibliography</head>
   <bibl xml:id="Bib_RE_TAC" n="1">Richard Ellmann (ed), The Artist as Critic: Critical Writings of Oscar Wilde (Chicago 1982).</bibl>
@@ -49,13 +49,13 @@ To include bibliographic citations in the document a `listBibl` can be used. It 
 
 ## Simple citation
 ```xml
-<bibl xml:id="Bib_RE_TAC" n="1">Richard Ellmann (ed), The Artist as Critic: Critical Writings of Oscar Wilde (Chicago 1982).</bibl>
+<bibl xml:id="Bibl_RE_TAC" n="1" type="book">Richard Ellmann (ed), The Artist as Critic: Critical Writings of Oscar Wilde (Chicago 1982).</bibl>
 ```
-The `bibl` element should be used if simple textual descriptions of bibliography are enough. The `xml:id` attribute should contain a unique ID. It is recommended to prefix the id with `Bib_` prefix to avoid potential collision of IDs in the document. The attribute `n` can be used to number the record inside the list and it is not necessary unique within the document.
+The `bibl` element should be used if simple textual descriptions of bibliography are enough. The `xml:id` attribute should contain a unique ID. It is recommended to prefix the id with `Bibl_` prefix to avoid potential collision of IDs in the document. The attribute `n` can be used to number the record inside the list and it is not necessary unique within the document.
 
 ## Structured bibliographic citation
 ```xml
-<biblStruct xml:id="Bib_OW_IBE" n="1">
+<biblStruct xml:id="Bibl_OW_IBE" n="1" type="book">
   <analytic>
     <author>Oscar Wilde</author>
     <title level="a">The Importance of Being Earnest</title>
@@ -72,6 +72,12 @@ The `bibl` element should be used if simple textual descriptions of bibliography
 </biblStruct>
 ```
 The `biblStruct` element should be used for structured descriptions of bibliographic information. Likewise the `bibl` element it should be used `xml:id` to provide a unique identificator of the record and `n` attribute to number the record inside the list.
+
+Both `bibl` and `biblStruct` element should have set `type` attribute specifying the type of the bibliographic record. See table below for available types: `monography`, `article`, `thesis`, `dissertation`, `journal`, `edition`.
+
+::: tip
+The ID of the `bibl` and `biblStruct` elements should have different prefixes for different lists.
+:::
 
 ### Analytic level of description
 ```xml
@@ -108,9 +114,9 @@ The `author` element can contain element `persName` and be linked to a predefine
 
 ### Title
 ```xml
-<title level="m">Plays, Prose Writings and Poems</title>
+<title xml:lang="eng" level="m" type="main">Plays, Prose Writings and Poems</title>
 ```
-The `title` element is mandatory and must be present in both `analytic` and `monogr`. It should contain the title of the bibligoraphic record and different level should be noted in the `level` attribute.
+The `title` element is mandatory and must be present in both `analytic` and `monogr`. It should contain the title of the bibligoraphic record and different level should be noted in the `level` attribute. The attribute `type` should further specify the type of the title. For example, books usually have main title and subtitle. It is also recommended to keep information about the language of the title.
 
 | Level | Description
 | :- | :-
@@ -119,6 +125,22 @@ The `title` element is mandatory and must be present in both `analytic` and `mon
 | j | (journal) the title applies to any serial or periodical publication such as a journal, magazine, or newspaper
 | s | (series) the title applies to a series of otherwise distinct publications such as a collection
 | u | (unpublished) the title applies to any unpublished material (including theses and dissertations unless published by a commercial press)
+
+| Type | Description
+| :- | :-
+| main | main title
+| sub | (subordinate) subtitle, title of part
+| alt | (alternate) alternate title, often in another language, by which the work is also known
+| short | abbreviated form of title
+| desc | (descriptive) descriptive paraphrase of the work functioning as a title
+
+::: tip More than one title element
+There can be more than one title element if the `type` attribute is different.
+```xml
+<title xml:lang="eng" level="m" type="main">Dreams and Visions in the Early Middle Ages</title>
+<title xml:lang="eng" level="m" type="sub">The Reception and Use of Patristic Ideas, 400–900</title>
+```
+:::
 
 ### Imprint
 ```xml

@@ -16,5 +16,7 @@ This list contains commonly used languages and their **ISO-639-3/B** abbreviatio
 | German | ger | |
 | German, Middle High | gmh | ca. 1050-1500 |
 | German, Old High | goh | ca.  750-1050 |
+| Greek, Ancient | grc | to 1453 |
+| Greek, Modern | gre | after 1453 |
 | Latin | lat |  |
 

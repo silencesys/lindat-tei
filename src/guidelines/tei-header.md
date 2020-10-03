@@ -49,6 +49,21 @@ The element should containt name of the author of the digital text in following 
 To link to the author later in text `xml:id` attribute can be used. It is recommended to prefix
 name of the author with letter `Author_`, see example above.
 
+::: tip Another possibility
+Sometimes might be desired to keep the name of the author of the original text. In that case `author` element should contain name of the author and your's name should be inside the responsibility statement `respStmt` with description of your responsibilities.
+::: details Show example
+```xml
+<titleStmt>
+    <title xml:lang="lat">The Importance of Being Earnest</title>
+    <author xml:id="Author_Wilde">Oscar Wilde</author>
+    <respStmt>
+      <resp>Transribed and encoded by</resp>
+      <name type="author">Martin Roček</name>
+    </respStmt>
+</titleStmt>
+```
+:::
+
 #### Editor
 ```xml
 <editor xml:id="Editor_MartinRocek">Martin Roček</editor>
@@ -157,6 +172,14 @@ Contains the name of the place where the bibliographic item was published and is
 #### Date
 Same as [before](#date), date should contain information when the item was published.
 
+#### Availability
+```xml
+<availability>
+  <p>This is an open access work licensed under a Creative Commons Attribution 4.0 International license.</p>
+</availability>
+```
+In case the license needs to be mentioned inside the document, the availability statement can be used `availability`. The license should be described inside a paragraph.
+
 ::: details See valid publication statement
 ```xml
 <publicationStmt>
@@ -167,6 +190,9 @@ Same as [before](#date), date should contain information when the item was publi
     <settlement>Prague</settlement>
   </pubPlace>
   <date when="2020-09-30">30. září 2020</date>
+  <availability>
+    <p>This is an open access work licensed under a Creative Commons Attribution 4.0 International license.</p>
+  </availability>
 </publicationStmt>
 ```
 :::

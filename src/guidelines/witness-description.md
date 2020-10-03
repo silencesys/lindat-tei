@@ -11,7 +11,7 @@ should always contain an unique manuscript identifier - siglum. All below descri
     <msIdentifier>
       <!-- Manuscript identification -->
     </msIdentifier>
-    <msCotents>
+    <msContents>
       <!-- Description of intellectual content -->
     </msContents>
     <physDesc>
@@ -33,7 +33,7 @@ should always contain an unique manuscript identifier - siglum. All below descri
     <collection>Rukopisy Třeboň</collection>
     <idno>A 17</idno>
   </msIdentifier>
-  <msCotents></msContents>
+  <msContents></msContents>
 </msDesc>
 ```
 
