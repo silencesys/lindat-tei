@@ -28,6 +28,7 @@ The translation **MUST** always be separated from the original text.
 Same rules as for the original text can be applied for translation.
 :::
 
+<!--
 ## Inline translations
 
 In case we do not want to fully translate the text, but only provide translation of selected words or sentences.
@@ -35,3 +36,4 @@ There are cases when you do not need to translate whole text but provide transla
 
 
 lem>reading=type"translation"
+-->
