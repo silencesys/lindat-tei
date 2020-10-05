@@ -30,7 +30,7 @@ For front matter and back matter I would recommend visiting [TEI guidelines](htt
 ## Structural elements
 There are two primary elements that should be used to structure and divide text.
 
-#### Divs
+### Divs
 ```xml
 <div xml:id="div1" xml:lang="lat" hand="Hand_Unknown-1"></div>
 ```
@@ -39,14 +39,14 @@ Attributes like `xml:id` and `hand` are optional. `xml:id` can be later used to 
 used to refer to the scribe that was defined in the `<teiHeader>` element and the `<handDesc>` section. Attribute `xml:lang` should be always present and must
 contain valid language code, see [the table](./language-codes.md).
 
-#### Headings
+### Headings
 ```xml
 <head xml:lang="lat" hand="Hand_Unknown-1"></head>
 ```
 The `head` element should be used for any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. The `xml:lang` and `hand` attributes can be used to further describe the properties of the header. Language should be valid ISO-639 language abbreviation, see [this list](./language-codes.md) and `hand` should be linked to an existing hand ID in the `<handDesc>` in the `<teiHeader>`.
 
 
-#### Paragraphs
+### Paragraphs
 ```xml
 <p xml:id="p13" xml:lang="lat" hand="Hand_Unknown-1"></p>
 ```
@@ -55,13 +55,13 @@ providing translation of the text. The `xml:id` attribute will be used to identi
 attribute should contain valid language code, [see the table](./language-codes.md). The `hand` attribute is again optional and can be used to point
 to a scriber that was defined in `<teiHeader>` section.
 
-#### Page beginnings
+### Page beginnings
 ```xml
 <pb source="#E1S" n="f23v" facs="image.jpg" />
 ```
 A pb element should appear at the start of the page which it identifies. The global `n` attribute indicates the number or other value associated with this page. This will normally be the page number or signature printed on it, since the physical sequence number is implicit in the presence of the pb element itself.  The `source` attribute should contain ID of the edition or source to which is the page beginning referring. The `facs` attribute can refer to the linked image file containing the folio.
 
-#### Line beginnings
+### Line beginnings
 ```xml
 <lb source="#E1S" n="1" break="no" />
 ```
