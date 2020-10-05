@@ -8,3 +8,4 @@ If you want to contribute to this site with your encoded texts it will be very w
 
 ## Content
 - [Somniale Danielis](./somniale.md)
+- [Regula sancti Benedicti](./regula-st-benedicti.md)

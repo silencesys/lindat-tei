@@ -32,16 +32,23 @@ There are two primary elements that should be used to structure and divide text.
 
 #### Divs
 ```xml
-<div xml:id="div1" xml:lang="lat" hand="#S1unknown"></div>
+<div xml:id="div1" xml:lang="lat" hand="Hand_Unknown-1"></div>
 ```
 `Div`s should be used to divide text to bigger chunks like chapters or whatever works for your text. They can be also freely nested.
 Attributes like `xml:id` and `hand` are optional. `xml:id` can be later used to link text division with translation, `hand` can be
-used to refer to the scribe that was defined in `<teiHeader>` section. Attribute `xml:lang` should be always present and must
+used to refer to the scribe that was defined in the `<teiHeader>` element and the `<handDesc>` section. Attribute `xml:lang` should be always present and must
 contain valid language code, see [the table](./language-codes.md).
+
+#### Headings
+```xml
+<head xml:lang="lat" hand="Hand_Unknown-1"></head>
+```
+The `head` element should be used for any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. The `xml:lang` and `hand` attributes can be used to further describe the properties of the header. Language should be valid ISO-639 language abbreviation, see [this list](./language-codes.md) and `hand` should be linked to an existing hand ID in the `<handDesc>` in the `<teiHeader>`.
+
 
 #### Paragraphs
 ```xml
-<p xml:id="p13" xml:lang="lat" hand="#S1unknown"></p>
+<p xml:id="p13" xml:lang="lat" hand="Hand_Unknown-1"></p>
 ```
 Paragraph tag should be used to divide text into paragraphs. Unlike the divs the attribute `xml:id` is mandatory for paragraphs if you consider
 providing translation of the text. The `xml:id` attribute will be used to identify paragraphs across different language variants. The `xml:lang`
@@ -216,6 +223,29 @@ is also refering to the unique ID used in the bibliographic section of our docum
 As was described in the example above, this element is used to contain a loosely-structured bibliographic citation with
 sub-components like `author`, `title` and so on, see [bibliography](./bibliography.md) for more information.
 
+## Glosses and segments
+### Glosses
+```xml
+<gloss xml:lang="czo">vyek</gloss>
+```
+Glosses should be marked with `gloss` element with language description in the `xml:lang` attribute if is different than the original text.
+
+::: warning Glosses and additions
+Consider wrapping the glosses within an addition if they're not part of the main text, because only `add` element can describe placing of the gloss.
+```xml
+Omnis etas <add place="above"><gloss xml:lang="czo">vyek</gloss></add>
+```
+:::
+
+### Segments
+```xml
+<seg xml:id="seg1">mensuras</seg>
+<!-- later when described -->
+<p corresp="#seg1">
+  Attende hic discretissimum et notabile...
+</p>
+```
+The `seg` element may be used at the encoder's discretion to mark any segments of the text of interest for processing. One use of the element is to mark text features for which no appropriate markup is otherwise defined. Another use is to provide an identifier for some segment which is to be pointed at by some other element—i.e. to provide a target, or a part of a target, for a ptr or other similar element. The `seg` element should always contain attribute `xml:id` which identifies the segment and can be later used to link the segment with proper description. The description itself should be in different `div` element and each description should have it's own paragraph `p` those paragraphs are linked with segments via `corresp` attribute that contains the ID of the segment.
 
 ## Different readings
 Many digital editions are based on number of sources of the same text. Thus, it is often needed to differentiate between various readings

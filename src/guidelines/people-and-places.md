@@ -143,9 +143,9 @@ The element specifies the faith, religion, or belief set of a person.
 
 ### Additional notes
 ```xml
-<note>Aragorn II, son of Arathorn II and Gilraen...</note>
+<note type="bibliographical">Aragorn II, son of Arathorn II and Gilraen...</note>
 ```
-The `note` element can be used to provide further information about the person.
+The `note` element can be used to provide further information about the person. The element can also conatin attribute `type` that provides further specification of the type of the note.
 
 <br>
 

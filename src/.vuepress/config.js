@@ -85,7 +85,8 @@ module.exports = {
           title: 'Partial examples',
           collapsable: false,
           children: [
-            'somniale'
+            'somniale',
+            'regula-st-benedicti'
           ]
         }
       ]

@@ -176,7 +176,7 @@ Contains a description of all the different hands used in a manuscript or other 
 #### Scribers are unknown
 ```xml
 <handDesc hands="2">
-  <handNote xml:id="S1unknown">
+  <handNote xml:id="Hand_Unknown-1">
     <p>idetifies the scribe of the manuscripts</p>
   </handNote>
   <!-- handNote can be repeated as many times as needed -->
@@ -184,12 +184,12 @@ Contains a description of all the different hands used in a manuscript or other 
 ```
 The element `<handNote>` describes a particular style or hand distinguished within a manuscript. The description of
 writers characteristic must be always inside the paragraph element `<p>`. The `xml:id` attribute must always contain
-an unique value, thus it is recommended to identify scribers with prefix starting with letter `S`.
+an unique value, thus it is recommended to identify scribers with prefix starting with letter `Hand_`.
 
 #### Scribers are known
 ```xml
 <handDesc hands="2">
- <handNote xml:id="S2Eirsp" scope="major">
+ <handNote xml:id="Hand_2Eirsp" scope="major">
   <p>The first part of the manuscript, <locus from="1v" to="72v:4">fols
        1v-72v:4</locus>, is written in a practised Icelandic Gothic bookhand. This hand
      is not found elsewhere.</p>
@@ -213,7 +213,7 @@ See example below.
 
 ```xml
 <handDesc hands="2">
- <handNote xml:id="S2Eirsp" scope="minor">
+ <handNote xml:id="Hand_2Eirsp" scope="minor">
   <p>The second part of the manuscript, <locus from="72v:4" to="194v">fols
        72v:4-194</locus>, is written in a hand contemporary with the first; it can also
      be found in a fragment of <title>Knýtlinga saga</title>, <ref>AM 20b II
