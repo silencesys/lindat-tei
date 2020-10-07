@@ -40,6 +40,10 @@ module.exports = {
       {
         text: 'Examples',
         link: '/examples/'
+      },
+      {
+        text: 'For editors',
+        link: '/for-editors/'
       }
     ],
     sidebar: {

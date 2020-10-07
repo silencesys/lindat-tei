@@ -112,6 +112,41 @@ It should contain an organization name. **The `orgName` element is a equivalent 
 As all three forementioned elements can be described with additional elements in similar fashion as the items in lists (`listPerson`, `listPlace`, `listOrg`) do not be tempted to duplicate the infomration. These additional elements should be only used to achieve higher level of detail in the markup if the information is present in the original text.
 :::
 
+## Dates and measures
+### Dates
+```xml
+<date when="1230-12-31">31st December 1230</date>
+```
+Dates in text should be marked with element `date` and with set attribute `when` describing the date in a standard format, e.g. yyyy-mm-dd. When the exact date is unknown and only year or year and month is known the unknown part can be omitted. There are also other attributes which can be used to describe the date:
+
+| Attribute | Description
+| :- | :-
+| when | supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.
+| notBefore | specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.
+| notAfter | specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.
+| from | indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.
+| to | indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.
+
+::: tip
+When `from`, `to` is used `when` can be omitted, this applies also for `notBefore` and `notAfter`. It is also expected when `notBefore` or `from` is used that `notAfter` and `to` will be used.
+:::
+
+#### Measures
+```xml
+<measure type="currency" units="gold">12 gold</measure>
+```
+Measures should be used whenever a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name is found in text. The attribute `type` should be used to further describe type of the measure. Units can be also described within the attribute `units`
+
+| Type | Description
+| :- | :-
+| currency | indicates that the measure is a valid currency
+| volume | indicates that the masure is a volume of some object
+| height | the measure describes height of something
+| width | the measure describes width of somethin
+| weight | the measure describes weight of something or someone
+| depth | specifies the depth of something
+| area | describe the size of the area
+| time | the measure is time
 
 ## Citation
 During the encoding process you will find passages of text that are taken from other sources. It is important to identify them and categorize them.

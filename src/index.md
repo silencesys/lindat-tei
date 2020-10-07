@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: /hero-02.png
 tagline: Guidelines for manuscript description incorporating TEI.
 actionText: Quick Start →
 actionLink: /guidelines/
