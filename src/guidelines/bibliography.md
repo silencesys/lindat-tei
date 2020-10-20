@@ -2,6 +2,10 @@
 
 To include bibliographic citations in the document a `listBibl` can be used. It should be located inside the `sourceDesc` element inside the `teiHeader`.
 
+::: danger Important
+All bibliographic citations should follow Chicago Manual of Style, see [Chicago manual of style](https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html).
+:::
+
 ```xml
 <listBibl>
   <head>Select bibliography</head>

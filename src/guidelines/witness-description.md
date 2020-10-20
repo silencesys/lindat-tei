@@ -118,8 +118,11 @@ inside the `<msItem>` element should be kept.
 ```
 Defines a location within a manuscript, manuscript part, or other object typically as a (possibly discontinuous) sequence of folio references.
 Attributes `from` and `to` should point to the location of the text in manuscript. Attribute `facs` can be used to link locus with a particular image.
+::: tip Spaces in range descriptions
+In case the range attribute `from`, `to` should contain spaces, because of additional identifier, use hyphens instead of spaces. For example **12 bis v** should be written as `12-bis-v`.
+:::
 ::: warning Important
-In case you will link locus to images, please include these images with your XML file as well
+In case you will use locus to link to images, please include these images with your XML file as well.
 :::
 
 #### Title
@@ -154,12 +157,13 @@ Under the general heading ‘physical description’ we subsume a large number o
 ```
 The `objectDesc` element is used to group together those parts of the physical description which relate specifically to the text-bearing object, its format, constitution, layout, etc. The `objectDesc` element is used for grouping the elements relating to the physicality of a text-bearing object as part of a manuscript description. If a full description of an object (text-bearing or not) is desired, the more general object element may be preferred. The `form` attribute is used to describe form of the manuscript, see table below.
 
-| Form |
-|:- |
-| codex |
-| roll |
-| vellum |
-| composite_manuscript |
+| Form | Description
+|:- | :- |
+| book | In case the witness is printed book. |
+| codex |  |
+| composite_manuscript | In case the witness is composed from various manuscripts |
+| roll |  |
+| vellum |  |
 
 #### Material
 ```xml
