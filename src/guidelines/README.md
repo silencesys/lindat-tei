@@ -1,6 +1,6 @@
 # Introduction
 
-This websites provides guidlines to help with manuscript encoding for the LINDAT/CLARIAH project. Thefollowing pages discuss all important elements and best practices. In case you have further questions, do not hesitate and contact one of us: Lucie Doležalová, Martin Roček, Ondřej Fúsik. We will be happy to help you.
+This websites provides guidlines to help with manuscript encoding for the LINDAT/CLARIAH project. The following pages discuss all important elements and best practices. In case you have further questions, do not hesitate and contact one of us: Lucie Doležalová, Martin Roček, Ondřej Fúsik. We will be happy to help you.
 
 Most of the descriptions are taken from the official TEI5P guidelines. Because of that it might not be the most descriptive ones. For that reason, please, inform us if you will have any suggestions how to improve these descriptions. Parts of this website are also build on the examples and descriptions from presentations that were given by [Marjorie Burghard](https://www.digitalmanuscripts.eu/people/co-ordinators/marjorie-burghart/) and were available online.
 
