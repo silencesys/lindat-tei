@@ -7,6 +7,7 @@ Most of the descriptions are taken from the official TEI5P guidelines. Because o
 ## Important sources
 + [**Text Encoding Initiative**](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html), an official TEI website, where are all rules described in detail
 + [**TEI by Example**](http://teibyexample.org/TBE.htm), tons of tutorials and examples of TEI uses
++ [**Latin**](https://latin.rocek.dev), latin to english dictionary and grammatical analyser
 
 ## Quick start
 
