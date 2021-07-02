@@ -151,7 +151,7 @@ There can be more than one title element if the `type` attribute is different.
 <imprint>
   <pubPlace>London</pubPlace>
   <publisher>Everyman</publisher>
-  <date when="1930-01-01">1930</date>
+  <date when="1930">1930</date>
   <biblScope unit="page">450-509</biblScope>
 </imprint>
 ```
@@ -171,7 +171,7 @@ The `publisher` element provides the name of the organization responsible for th
 
 #### Date
 ```xml
-<date when="1930-01-01">1930</date>
+<date when="1930">1930</date>
 ```
 The `date` element contains date in any format, see [date](./tei-header.md#date) for further description.
 

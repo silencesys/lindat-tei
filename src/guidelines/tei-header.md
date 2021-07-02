@@ -111,7 +111,7 @@ table of the [language codes](./language-codes.md) for valid language abbreviati
 ```
 Element should contain date when the edition was published in a human readable form. Attribute `when` should on the other
 hand always contain date in machine readable form `YYYY-MM-DD` where `YYYY` stands for year, `MM` for month and `DD` for day.
-In case only year is known, date should not be omitted but `01` should be used instead.
+In case only year is known, date can be omitted.
 
 #### Statement of responsibility
 ```xml
