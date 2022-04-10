@@ -41,6 +41,7 @@ If you are unsure whether a person, place or witness is already mentioned in the
     later crowned King Elessar Telcontar (March 1, 2931 - FO 120 or SR 1541), the 26th King of Arnor and 35th King of Gondor -
     and first High King of Gondor and Arnor since the short reign of Isildur.
   </note>
+  <link xml:lang="eng" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
 </person>
 ```
 Each person should be wrapped inside the `person` element with a unique id. It is recommeneded to add prefix as `Person_` to the actual actual ID, so it won't collide with other IDs later.
@@ -151,6 +152,19 @@ The element specifies the faith, religion, or belief set of a person.
 ```
 The `note` element can be used to provide further information about the person. The element can also conatin attribute `type` that provides further specification of the type of the note.
 
+### Links to other resources
+```xml
+<link xml:lang="eng" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
+```
+The `link` element can be used to provide links to other resources. The attribute `xml:lang` can be used to specify the language of the link. When no `xml:lang` attribute is provided the resource is considered to be in English. The attribute `type` can be used to specify the type of the link. Following types will be supported:
+
+| Type | Name of the resource |
+| :- | :-
+| wiki | Wikipedia
+| brit | Britannica
+| academia | Academia.edu
+| web | For official website
+
 <br>
 
 ::: tip Additional information
@@ -172,6 +186,7 @@ The `person` element is further described in the [TEI documentation guide](https
       <addrLine>CH-1700 Fribourg</addrLine>
     </address>
   </location>
+  <link target="https://en.wikipedia.org/wiki/University_of_Freiburg" type="wiki">Wikipedia</link>
 </place>
 ```
 The `place` element should contain information about the geo-political or geographical place. Additional descriptive tags can be used to provide further information about the place. In the example above the University of Frideburg is described in detail.
@@ -275,3 +290,9 @@ This element should contain description of the location where the organization c
 <desc>The group, whose best-known line-up comprised John Lennon...</desc>
 ```
 The `description` element can be used to provide further information about the organization.
+
+### Links
+```xml
+<link target="https://en.wikipedia.org/wiki/University_of_Freiburg" type="wiki">Wikipedia</link>
+```
+Similar to the `link` element in the `person` element, the `link` element can be used to provide links to other resources. The `type` attribute can be used to provide further categorization. See [link description in person section](#link-to-other-resources) for more information.

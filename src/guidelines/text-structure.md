@@ -55,6 +55,12 @@ providing translation of the text. The `xml:id` attribute will be used to identi
 attribute should contain valid language code, [see the table](./language-codes.md). The `hand` attribute is again optional and can be used to point
 to a scriber that was defined in `<teiHeader>` section.
 
+### Footnotes
+```xml
+<p>Paragraph tag should be used to divide text into paragraphs.<note type="footnote">For further information see TEIP5 Guidelines</note>Unlike the divs the attribute... </p>
+```
+For footnotes the `note` element should be used. The `type` attribute should be set to `footnote` and the content of the `note` element should be the footnote text.
+
 ### Page beginnings
 ```xml
 <pb source="#E1S" n="f23v" facs="image.jpg" />
