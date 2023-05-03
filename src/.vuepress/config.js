@@ -19,7 +19,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { name: 'theme-color', content: '#fff' }],
-    ['script', { src: 'https://umami.rocek.dev/script.js', crossorigin: 'anonymous', "data-website-id": '021f40c5-179d-4546-9bf4-9c294a4eaf92' }],
+    ['script', { src: 'https://umami.rocek.dev/script.js', "data-website-id": '021f40c5-179d-4546-9bf4-9c294a4eaf92' }],
   ],
 
   /**
