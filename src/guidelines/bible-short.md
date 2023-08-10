@@ -4,7 +4,7 @@ It is recommended to stick with the vulgata abbreviations. The list of abbreviat
 
 [[toc]]
 
-## Old testament
+## Old Testament
 | Abbreviation Vulgata | Abbreviation ČEP | Czech name
 | :- | :- | :-
 | Gn | Gn | První Mojžíšova (Genesis)
