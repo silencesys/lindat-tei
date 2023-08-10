@@ -30,7 +30,7 @@ It is recommended to stick with the vulgata abbreviations. The list of abbreviat
 | Ecl | Kaz | Kazatel
 | Ct | Pís | Píseň písní
 | Is | Iz | Izajáš
-| Ier | Jr | Jeremiáš
+| Ier | Jr | Jeremjáš
 | Lam | Pl | Pláč
 | Ez | Ez | Ezechiel
 | Dn | Da | Daniel
