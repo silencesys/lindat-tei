@@ -50,7 +50,7 @@ It is recommended to stick with the vulgata abbreviations. The list of abbreviat
 ### Deuterocanonical books
 | Abbreviation Vulgata | Abbreviation ČEP | Czech name
 | :- | :- | :-
-| Tb | Tób | Tóbit - Tóbijáš
+| Tb | Tób | Tóbijáš
 | Idt | Júd | Júdit
 | Est | Est | Přídavky k Ester
 | Sap | Mdr | Kniha moudrosti
