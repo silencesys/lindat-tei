@@ -8,15 +8,15 @@ It is recommended to stick with the vulgata abbreviations. The list of abbreviat
 | Abbreviation Vulgata | Abbreviation ČEP | Czech name
 | :- | :- | :-
 | Gn | Gn | První Mojžíšova (Genesis)
-| Ex | Ex | Druhá Mojžíšova
+| Ex | Ex | Druhá Mojžíšova (Exodus)
 | Lv | Lv | Třetí Mojžíšova (Leviticus)
 | Nm | Nu | Čtvrtá Mojžíšova (Numeri)
 | Dt | Dt | Pátá Mojžíšova (Deuteronomium)
 | Ios | Joz | Jozue
 | Idc | Sd | Soudců
 | Rt | Rt | Rút
-| 1Sm / 1Rg | 1S | První Samuelova / První královská
-| 2Sm / 2Rg | 2S | Druhá Samuelova / Druhá královská
+| 1Rg (1Sm) | 1S | První Samuelova / První královská
+| 2Rg (2Sm) | 2S | Druhá Samuelova / Druhá královská
 | 3Rg | 1Kr | První královská / Třetí královská
 | 4Rg | 2Kr | Druhá královská / Čtvrtá královská
 | 1Par | 1Pa | První paralipomenon (První letopisů)
@@ -70,10 +70,10 @@ Io | J | Jan
 Act | Sk | Skutky apoštolů
 Rm | Ř | Římanům
 1Cor | 1K | První list Korintským
-2Cor | 2K | Druhý listy Korintským
+2Cor | 2K | Druhý list Korintským
 Gal | Ga | Galatským
 Eph | Ef | Efezským
-Phil | F(p) | Filipským
+Phil | Fp | Filipským
 Col | Ko | Koloským
 1Th | 1Te | První list Tesalonickým
 2Th | 2Te | Druhý list Tesalonickým
@@ -83,8 +83,8 @@ Tit | Tt | Titovi
 Phlm | Fm | Filemonovi
 Hbr | Žd | Židům
 Iac | Jk | List Jakubův
-1Pt | 1P(t) | První list Petrův
-2Pt | 2P(t) | Druhý list Petrův
+1Pt | 1Pt | První list Petrův
+2Pt | 2Pt | Druhý list Petrův
 1Io | 1J | První list Janův
 2Io | 2J | Druhý list Janův
 3Io | 3J | Třetí list Janův
