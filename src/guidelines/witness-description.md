@@ -1,8 +1,8 @@
 # Witness description
 
 Contains either a description of a single witness referred to within the critical apparatus, or a list of witnesses which is to be referred to by a single sigil.
-All witnesses in `sourceDesc` must be listed inside an `listWit` element as can be seen in the [example](./tei-header.md#source-descriptio). The `xml:id` attribute
-should always contain an unique manuscript identifier - siglum. All below described tags **must** be inside the `msDesc` element.
+All witnesses in `sourceDesc` must be listed inside an `listWit` element as can be seen in the [example](./tei-header.md#source-description). The `xml:id` attribute
+should always contain a unique manuscript identifier - siglum. All below described tags **must** be inside the `msDesc` element.
 
 ```xml
 <witness xml:id="A17">
@@ -37,7 +37,7 @@ should always contain an unique manuscript identifier - siglum. All below descri
 </msDesc>
 ```
 
-The msIdentifier element is intended to provide an unambiguous means of uniquely identifying a particular manuscript. This may be done in a structured way, by providing information about the holding institution and the call number, shelfmark, or other identifier used to indicate its location within that institution. Alternatively, or in addition, a manuscript may be identified simply by a commonly used name.
+The `msIdentifier` element is intended to provide an unambiguous means of uniquely identifying a particular manuscript. This may be done in a structured way, by providing information about the holding institution and the call number, shelfmark, or other identifier used to indicate its location within that institution. Alternatively, or in addition, a manuscript may be identified simply by a commonly used name.
 
 #### Country
 ```xml
@@ -94,7 +94,7 @@ Supplies any form of an identifier used to identify some object, such as a bibli
 </msDesc>
 ```
 
-The msContents element is used to describe the intellectual content of a manuscript or manuscript part. It comprises either a series of informal prose paragraphs or a series of msItem or msItemStruct elements, each of which provides a more detailed description of a single item contained within the manuscript. These may be prefaced, if desired, by a summary element, which is especially useful where one wishes to provide an overview of a manuscript's contents and describe only some of the items in detail.
+The `msContents` element is used to describe the intellectual content of a manuscript or manuscript part. It comprises either a series of informal prose paragraphs or a series of `msItem` or `msItemStruct` elements, each of which provides a more detailed description of a single item contained within the manuscript. These may be prefaced, if desired, by a summary element, which is especially useful where one wishes to provide an overview of a manuscript's contents and describe only some of the items in detail.
 
 ### Summary
 ```xml
@@ -181,14 +181,14 @@ Contains a description of all the different hands used in a manuscript or other 
 ```xml
 <handDesc hands="2">
   <handNote xml:id="Hand_Unknown-1">
-    <p>idetifies the scribe of the manuscripts</p>
+    <p>identifies the scribe of the manuscripts</p>
   </handNote>
   <!-- handNote can be repeated as many times as needed -->
 </handDesc>
 ```
 The element `<handNote>` describes a particular style or hand distinguished within a manuscript. The description of
 writers characteristic must be always inside the paragraph element `<p>`. The `xml:id` attribute must always contain
-an unique value, thus it is recommended to identify scribers with prefix starting with letter `Hand_`.
+an unique value, thus it is recommended to identify scribers with prefix starting with string `Hand_`. 
 
 #### Scribers are known
 ```xml
@@ -234,7 +234,7 @@ See example below.
   <acquistion></acquisition>
 </history>
 ```
-The above elements are used to record information about the history of a manuscript.
+The above elements are used to record information about the history of a manuscript. _This element is optional._
 
 ### Origin
 ```xml
