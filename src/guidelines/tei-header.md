@@ -1,10 +1,11 @@
 # TEI Header
-The TEI header `<teiHeader>` is mandatory and contains descriptive meta-information about the document. The `<teiHeader>` minimally contains a description of the electronic file inside a `<fileDesc>`. The latter element consists of three mandatory components:
+The TEI header `<teiHeader>` is mandatory and contains descriptive meta-information about the document. The `<teiHeader>` minimally contains a description of the electronic file inside a `<fileDesc>`. The latter element consists of five components:
 
-+ the title statement `<titleStmt>`, providing information about the title `<title>`, author `<author>`, and others responsible for the electronic text `<editor>`
-+ the edition statement `<editionStmt>`, providing information about the `<title>`, author `<author>`, and other bibliographical information of the previous editions of the text
-+ the publication statement `<publicationStmt>`, providing publication details about the electronic text in a structured way or as prose inside a paragraph `<p>`
-+ a description of the source `<sourceDesc>`, documenting bibliographic details about the electronic text’s material source (if any) in a structured way or in a prose paragraph `<p>`
++ the title statement `<titleStmt>` (mandatory), providing information about the title `<title>`, author `<author>`, and others responsible for the electronic text `<editor>`
++ the edition statement `<editionStmt>` (mandatory/optional), providing information about the `<title>`, author `<author>`, and other bibliographical information of the previous editions of the text
++ the publication statement `<publicationStmt>` (mandatory), providing publication details about the electronic text in a structured way or as prose inside a paragraph `<p>`
++ an encoding description `<encodingDesc>` (optional), outlining the connection between the electronic text and the originating source or sources
++ a description of the source `<sourceDesc>` (mandatory), documenting bibliographic details about the electronic text’s material source (if any) in a structured way or in a prose paragraph `<p>`
 
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -19,6 +20,9 @@ The TEI header `<teiHeader>` is mandatory and contains descriptive meta-informat
       <publicationStmt>
         <!-- Publication statement -->
       </publicationStmt>
+	  <encodingDesc>
+        <!-- Encoding description -->
+      </encodingDesc>
       <sourceDesc>
         <!-- Source description -->
       </sourceDesc>
@@ -36,30 +40,43 @@ document.
 ```xml
 <title xml:lang="lat">Somniale Danielis</title>
 ```
-The element should always contain title of the document and has set `xml:lang` attribute with ISO-639-3 language code.
+The element should always contain title of the document and have set `xml:lang` attribute with ISO-639-3 language code.
 Name of the document can be anything, but it is strongly advised to keep the name of the source text.
-For list of language codes see [language codes](./language-codes.md). The `<title>` tag can be repeated as many times
+For a list of language codes see [language codes](./language-codes.md). The `<title>` tag can be repeated as many times
 as needed, but the `xml:lang` should be always set to a different language.
 
 #### Author
 ```xml
 <author xml:id="Author_MartinRocek">Martin Roček</author>
 ```
-The element should containt name of the author of the digital text in following format `name surname`.
-To link to the author later in text `xml:id` attribute can be used. It is recommended to prefix
-name of the author with letter `Author_`, see example above.
+The element should contain the name of the author of the digital text in the following format `name surname`.
+To link to the author later in text the `xml:id` attribute can be used. It is recommended to prefix
+the name of the author with `Author_`, see example above.
 
-::: tip Another possibility
-Sometimes might be desired to keep the name of the author of the original text. In that case `author` element should contain name of the author and your's name should be inside the responsibility statement `respStmt` with description of your responsibilities.
+Alternatively, sometimes it might be desired to keep the name of the author of the original text. In that case `author` element should contain name of the author and your name should be inside the responsibility statement `respStmt` with description of your responsibilities. Everyone who has been involved in the creation of the electronic text should be wrapped in their own `respStmt`. The description of the particular responsibilities in the `resp` element should be unified across all files of the database. It is advised to use the `type="author"` attribute to denote a person.
 ::: details Show example
 ```xml
 <titleStmt>
-    <title xml:lang="lat">The Importance of Being Earnest</title>
-    <author xml:id="Author_Wilde">Oscar Wilde</author>
-    <respStmt>
-      <resp>Transribed and encoded by</resp>
-      <name type="author">Martin Roček</name>
-    </respStmt>
+	<title xml:lang="lat">[Colophon]: Qui me scribebat, nomen...</title>
+	<title xml:lang="cze">Kolofón: Ten, který mě napsal, měl jméno...</title>
+	<title xml:lang="eng">Colophon: The one who wrote me was...</title>
+	<author xml:id="Author_Unknown">
+	   <name xml:lang="eng">Unknown</name>
+	   <name xml:lang="cze">Neznámý</name>
+	   <name xml:lang="lat">Ignotus</name>
+	</author>
+	<respStmt>
+	   <resp>Transcribed and encoded by</resp>
+	   <name type="author">Berenika Bendová</name>
+	</respStmt>
+	<respStmt>
+	   <resp>XML edited by</resp>
+	   <name type="author">Karel Pacovský</name>
+	</respStmt>
+	<respStmt>
+	   <resp>XML edited by</resp>
+	   <name type="author">Pavel Tříska</name>
+	</respStmt>
 </titleStmt>
 ```
 :::
