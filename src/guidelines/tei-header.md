@@ -264,7 +264,7 @@ Documents the relationship between an electronic text and the source or sources 
 used to further describe principles that were used when the text was encoded. The text can be written in prose in
 paragraphs `p` or sub-components.
 
-# Profile description
+## Profile description
 ```xml
 <profileDesc>
 	<textClass>
