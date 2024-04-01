@@ -1,10 +1,11 @@
 # TEI Header
-The TEI header `<teiHeader>` is mandatory and contains descriptive meta-information about the document. The `<teiHeader>` minimally contains a description of the electronic file inside a `<fileDesc>`. The latter element consists of five components:
+The TEI header `<teiHeader>` is mandatory and contains descriptive meta-information about the document. The `<teiHeader>` minimally contains a description of the electronic file inside a `<fileDesc>`. Further, the TEI header may contain `<encodingDesc>`, outlining the connection between the electronic text and the originating source or sources, and `<profileDesc>`, assigning keywords to each file.
+
+The `<fileDesc>` element consists of four components:
 
 + the title statement `<titleStmt>` (mandatory), providing information about the title `<title>`, author `<author>`, and others responsible for the electronic text `<editor>`
 + the edition statement `<editionStmt>` (mandatory/optional), providing information about the `<title>`, author `<author>`, and other bibliographical information of the previous editions of the text
 + the publication statement `<publicationStmt>` (mandatory), providing publication details about the electronic text in a structured way or as prose inside a paragraph `<p>`
-+ an encoding description `<encodingDesc>` (optional), outlining the connection between the electronic text and the originating source or sources
 + a description of the source `<sourceDesc>` (mandatory), documenting bibliographic details about the electronic text’s material source (if any) in a structured way or in a prose paragraph `<p>`
 
 ```xml
@@ -51,9 +52,11 @@ as needed, but the `xml:lang` should be always set to a different language.
 ```
 The element should contain the name of the author of the digital text in the following format `name surname`.
 To link to the author later in text the `xml:id` attribute can be used. It is recommended to prefix
-the name of the author with `Author_`, see example above.
+the name of the author with string `Author_`, see example above.
+Alternatively, sometimes it might be desired to keep the name of the author of the original text. In that case `author` element should contain name of the author and your name should be inside the responsibility statement `respStmt` with description of your responsibilities.
 
-Alternatively, sometimes it might be desired to keep the name of the author of the original text. In that case `author` element should contain name of the author and your name should be inside the responsibility statement `respStmt` with description of your responsibilities. Everyone who has been involved in the creation of the electronic text should be wrapped in their own `respStmt`. The description of the particular responsibilities in the `resp` element should be unified across all files of the database. It is advised to use the `type="author"` attribute to denote a person.
+#### Statement of responsibility
+It supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. Name of the person should always be wrapped in the `name` element and description of responsibility in the `resp` element. The description of the particular responsibilities in the `resp` element is to be unified across all files of the database. It is advised to use the `type="author"` attribute to denote a person.
 ::: details Show example
 ```xml
 <titleStmt>
@@ -86,7 +89,7 @@ Alternatively, sometimes it might be desired to keep the name of the author of t
 <editor xml:id="Editor_MartinRocek">Martin Roček</editor>
 ```
 The element contains name of the editor of the digital text in format `name surname`. Similarly, as in case of authors, `xml:id` can be used
-to link to the editor later in text. It is also recommended to prefix name of the editor with letter `Editor_`. Can be omitted if there are
+to link to the editor later in text. It is also recommended to prefix name of the editor with string `Editor_`. Can be omitted if there are
 no editors.
 
 ::: details See valid title statement
@@ -113,7 +116,7 @@ An edition statement is optional for the first release of a computer file; it is
 </edition>
 ```
 Every edition should be inside the `<edition>` element. `xml:id` attribute can be used to link to a particular edition
-in text, it is recommended to prefix edition with `Edition_` letter. The `n` attribute can be used to informn about version of the digital text.
+in text, it is recommended to prefix edition with `Edition_` string. The `n` attribute can be used to inform about version of the digital text.
 
 #### Title
 ```xml
@@ -150,7 +153,7 @@ Should contain editor's note and description of differences between editions.
 If, for example, the digital edition of this version of Somniale Danielis builds on an existing electronic edition, but adds a substantive new category of annotations by Martin Roček, this could be reflected in the `editionStmt` as follows:
 ```xml
 <editionStmt>
-  <edition xml:id="Edition_2.O" n="2.0">
+  <edition xml:id="Edition_2.0" n="2.0">
     <title xml:lang="eng">Somniale Danielis: the Medieval Dreambook with thematic annotations</title>
     <date when="2020-09-30">2020</date>
     <note>Thematic annotations were added to the two oldest fragments of the Somniale Danielis.</note>
@@ -195,7 +198,7 @@ Same as [before](#date), date should contain information when the item was publi
   <p>This is an open access work licensed under a Creative Commons Attribution 4.0 International license.</p>
 </availability>
 ```
-In case the license needs to be mentioned inside the document, the availability statement can be used `availability`. The license should be described inside a paragraph.
+In case the license needs to be mentioned inside the document, the `availability` statement can be used. The license should be described inside a paragraph.
 
 ::: details See valid publication statement
 ```xml
@@ -214,19 +217,6 @@ In case the license needs to be mentioned inside the document, the availability 
 ```
 :::
 
-## Encoding description
-```xml
-<encodingDesc>
-  <projectDesc>
-    <p><!-- General project description, optional --></p>
-  </projectDesc>
-  <refsDecl></refsDecl>
-</encodingDesc>
-```
-Documents the relationship between an electronic text and the source or sources from which it was derived. It can be
-used to further describe principles that were used when the text was encoded. The text can be written in prose in
-paragraphs `p` or sub-components.
-
 ## Source description
 ```xml
 <sourceDesc>
@@ -236,7 +226,7 @@ paragraphs `p` or sub-components.
   <!-- can contain various lists see People and places or Bibliography -->
 </sourceDesc>
 ```
-The `sourceDesc` element is the fifth and final component of the fileDesc element. It is a mandatory element and is used to record details of the source or sources from which a computer file is derived. This might be a printed text or a manuscript, another computer file, an audio or video recording of some kind, or a combination of these. An electronic file may also have no source, if what is being catalogued is an original text created in an electronic form. The paragraph `<p>` element can and should be used for the general description of the sources, then each witness should be listed in the `listWit` list.
+The `sourceDesc` element is the fourth and final component of the fileDesc element. It is a mandatory element and is used to record details of the source or sources from which a computer file is derived. This might be a printed text or a manuscript, another computer file, an audio or video recording of some kind, or a combination of these. An electronic file may also have no source, if what is being catalogued is an original text created in an electronic form. The paragraph `<p>` element can and should be used for the general description of the sources, then each witness should be listed in the `listWit` list.
 
 ::: details See valid source description
 This source description contains additional lists which are described in full on following pages.
@@ -260,3 +250,32 @@ This source description contains additional lists which are described in full on
 </sourceDesc>
 ```
 :::
+
+## Encoding description
+```xml
+<encodingDesc>
+  <projectDesc>
+    <p><!-- General project description, optional --></p>
+  </projectDesc>
+  <refsDecl></refsDecl>
+</encodingDesc>
+```
+Documents the relationship between an electronic text and the source or sources from which it was derived. It can be
+used to further describe principles that were used when the text was encoded. The text can be written in prose in
+paragraphs `p` or sub-components.
+
+## Profile description
+```xml
+<profileDesc>
+	<textClass>
+		<keywords>
+			<term type="genre" xml:lang="eng">Riddles</term>
+			<term type="genre" xml:lang="cze">Hádanky</term>
+			<term type="genre" xml:lang="lat">Aenigmata</term>
+			<term type="form" xml:lang="eng">Unclear</term>
+			<term type="form" xml:lang="cze">Nejasné</term>
+		</keywords>
+	</textClass>
+</profileDesc>
+```
+Assigns a category of genre (type="genre") and form (type="form") within the `keywords` element. The `<term>` tag can be repeated for individual language variants (i.e. `xml:lang` should be always set to a different language for each type).
