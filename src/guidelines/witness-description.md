@@ -2,10 +2,10 @@
 
 Contains either a description of a single witness referred to within the critical apparatus, or a list of witnesses which is to be referred to by a single sigil.
 All witnesses in `sourceDesc` must be listed inside an `listWit` element as can be seen in the [example](./tei-header.md#source-description). The `xml:id` attribute
-should always contain a unique manuscript identifier - siglum. All below described tags **must** be inside the `msDesc` element.
+should always contain a unique manuscript identifier - siglum and the abbreviation of the institution. All below described tags **must** be inside the `msDesc` element.
 
 ```xml
-<witness xml:id="A17">
+<witness xml:id="SOAT_A_17">
   <msDesc>
     <!-- Manuscript description -->
     <msIdentifier>
