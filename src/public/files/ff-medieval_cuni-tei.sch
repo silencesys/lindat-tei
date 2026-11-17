@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  LINDAT / UŘLS TEI rules that a RELAX NG schema cannot express.
+  LINDAT / Medieval CUNI TEI rules that a RELAX NG schema cannot express.
   Source: https://lindat.coders.tools/guidelines/
   role="error"   = the guidelines say "must" / "mandatory" / "required"
   role="warning" = the guidelines say "recommended" / "should", or the rule is only shown in examples

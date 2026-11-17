@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>LINDAT / UŘLS TEI customisation (draft)</title>
+        <title>LINDAT / Medieval CUNI TEI customisation (draft)</title>
         <respStmt>
           <resp>ODD derived from the Medieval CUNI TEI Cookbook guidelines (https://lindat.coders.tools/guidelines/)</resp>
           <name>[maintainer]</name>
