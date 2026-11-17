@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-11-17T10:11:28Z. . 
+Schema generated from ODD source 2026-11-17T22:04:46Z. . 
 TEI Edition: P5 Version 4.12.0. Last updated on 28th July 2026, revision 113e933e2 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.12.0/ 
   
@@ -276,7 +276,7 @@ Suggested values include: 1] human; 2] template; 3] system; 4] bot; 5] unspecifi
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.cmc-generatedBy-CMC_generatedBy_within_post-constraint-rule-1">
+            id="ff-medieval-cuni-tei-att.cmc-generatedBy-CMC_generatedBy_within_post-constraint-rule-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -378,7 +378,7 @@ Suggested values include: 1] human; 2] template; 3] system; 4] bot; 5] unspecifi
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.datable.w3c-att-datable-w3c-when-constraint-rule-2">
+            id="ff-medieval-cuni-tei-att.datable.w3c-att-datable-w3c-when-constraint-rule-2">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -388,7 +388,7 @@ Suggested values include: 1] human; 2] template; 3] system; 4] bot; 5] unspecifi
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.datable.w3c-att-datable-w3c-from-constraint-rule-3">
+            id="ff-medieval-cuni-tei-att.datable.w3c-att-datable-w3c-from-constraint-rule-3">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -398,7 +398,7 @@ Suggested values include: 1] human; 2] template; 3] system; 4] bot; 5] unspecifi
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.datable.w3c-att-datable-w3c-to-constraint-rule-4">
+            id="ff-medieval-cuni-tei-att.datable.w3c-att-datable-w3c-to-constraint-rule-4">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -710,7 +710,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.global.source-source-only_1_ODD_source-constraint-rule-5">
+            id="ff-medieval-cuni-tei-att.global.source-source-only_1_ODD_source-constraint-rule-5">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -735,6 +735,46 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
                <oneOrMore>
                   <data type="token">
                      <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.interpLike.attributes">
+      <ref name="tei_att.interpLike.attribute.type"/>
+      <ref name="tei_att.interpLike.attribute.subtype"/>
+      <ref name="tei_att.interpLike.attribute.inst"/>
+   </define>
+   <define name="tei_att.interpLike.attribute.type">
+      <optional>
+         <attribute name="type">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates what kind of phenomenon is being noted in the passage.
+Sample values include: 1] image; 2] character; 3] theme; 4] allusion</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.interpLike.attribute.subtype">
+      <optional>
+         <attribute name="subtype">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(subtype) provides a sub-categorization of the phenomenon is being noted in the passage, if needed.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.interpLike.attribute.inst">
+      <optional>
+         <attribute name="inst">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(instances) points to instances of the analysis or interpretation represented by the current element.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
                   </data>
                </oneOrMore>
             </list>
@@ -918,7 +958,7 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.pointing-targetLang-targetLang-constraint-rule-6">
+            id="ff-medieval-cuni-tei-att.pointing-targetLang-targetLang-constraint-rule-6">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1092,7 +1132,7 @@ Suggested values include: 1] sole; 2] major; 3] minor</a:documentation>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-7">
+            id="ff-medieval-cuni-tei-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-7">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1136,7 +1176,7 @@ Suggested values include: 1] sole; 2] major; 3] minor</a:documentation>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-8">
+            id="ff-medieval-cuni-tei-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-8">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1172,7 +1212,7 @@ Suggested values include: 1] sole; 2] major; 3] minor</a:documentation>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.typed-subtypeTyped-constraint-rule-9">
+            id="ff-medieval-cuni-tei-att.typed-subtypeTyped-constraint-rule-9">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -1363,6 +1403,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       </optional>
    </define>
    <define name="tei_att.global.attributes">
+      <ref name="tei_att.global.analytic.attributes"/>
       <ref name="tei_att.global.change.attributes"/>
       <ref name="tei_att.global.facs.attributes"/>
       <ref name="tei_att.global.linking.attributes"/>
@@ -1835,29 +1876,113 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
    <define name="tei_model.segLike">
       <choice>
          <ref name="tei_seg"/>
+         <ref name="tei_s"/>
+         <ref name="tei_cl"/>
+         <ref name="tei_phr"/>
+         <ref name="tei_w"/>
+         <ref name="tei_m"/>
+         <ref name="tei_c"/>
+         <ref name="tei_pc"/>
       </choice>
    </define>
    <define name="tei_model.segLike_alternation">
       <choice>
          <ref name="tei_seg"/>
+         <ref name="tei_s"/>
+         <ref name="tei_cl"/>
+         <ref name="tei_phr"/>
+         <ref name="tei_w"/>
+         <ref name="tei_m"/>
+         <ref name="tei_c"/>
+         <ref name="tei_pc"/>
       </choice>
    </define>
    <define name="tei_model.segLike_sequence">
       <ref name="tei_seg"/>
+      <ref name="tei_s"/>
+      <ref name="tei_cl"/>
+      <ref name="tei_phr"/>
+      <ref name="tei_w"/>
+      <ref name="tei_m"/>
+      <ref name="tei_c"/>
+      <ref name="tei_pc"/>
    </define>
    <define name="tei_model.segLike_sequenceOptional">
       <optional>
          <ref name="tei_seg"/>
+      </optional>
+      <optional>
+         <ref name="tei_s"/>
+      </optional>
+      <optional>
+         <ref name="tei_cl"/>
+      </optional>
+      <optional>
+         <ref name="tei_phr"/>
+      </optional>
+      <optional>
+         <ref name="tei_w"/>
+      </optional>
+      <optional>
+         <ref name="tei_m"/>
+      </optional>
+      <optional>
+         <ref name="tei_c"/>
+      </optional>
+      <optional>
+         <ref name="tei_pc"/>
       </optional>
    </define>
    <define name="tei_model.segLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="tei_seg"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_s"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_cl"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_phr"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_w"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_m"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_c"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_pc"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.segLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="tei_seg"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_s"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_cl"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_phr"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_w"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_m"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_c"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_pc"/>
       </oneOrMore>
    </define>
    <define name="tei_model.hiLike">
@@ -2871,6 +2996,9 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="tei_retrace"/>
          <ref name="tei_undo"/>
          <ref name="tei_seg"/>
+         <ref name="tei_w"/>
+         <ref name="tei_c"/>
+         <ref name="tei_pc"/>
       </choice>
    </define>
    <define name="tei_model.ptrLike">
@@ -2943,6 +3071,10 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="tei_joinGrp"/>
          <ref name="tei_alt"/>
          <ref name="tei_altGrp"/>
+         <ref name="tei_span"/>
+         <ref name="tei_spanGrp"/>
+         <ref name="tei_interp"/>
+         <ref name="tei_interpGrp"/>
       </choice>
    </define>
    <define name="tei_model.global.meta_alternation">
@@ -2957,6 +3089,10 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="tei_joinGrp"/>
          <ref name="tei_alt"/>
          <ref name="tei_altGrp"/>
+         <ref name="tei_span"/>
+         <ref name="tei_spanGrp"/>
+         <ref name="tei_interp"/>
+         <ref name="tei_interpGrp"/>
       </choice>
    </define>
    <define name="tei_model.global.meta_sequence">
@@ -2970,6 +3106,10 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <ref name="tei_joinGrp"/>
       <ref name="tei_alt"/>
       <ref name="tei_altGrp"/>
+      <ref name="tei_span"/>
+      <ref name="tei_spanGrp"/>
+      <ref name="tei_interp"/>
+      <ref name="tei_interpGrp"/>
    </define>
    <define name="tei_model.global.meta_sequenceOptional">
       <optional>
@@ -3001,6 +3141,18 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       </optional>
       <optional>
          <ref name="tei_altGrp"/>
+      </optional>
+      <optional>
+         <ref name="tei_span"/>
+      </optional>
+      <optional>
+         <ref name="tei_spanGrp"/>
+      </optional>
+      <optional>
+         <ref name="tei_interp"/>
+      </optional>
+      <optional>
+         <ref name="tei_interpGrp"/>
       </optional>
    </define>
    <define name="tei_model.global.meta_sequenceOptionalRepeatable">
@@ -3034,6 +3186,18 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       <zeroOrMore>
          <ref name="tei_altGrp"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_span"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_spanGrp"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_interp"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_interpGrp"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.global.meta_sequenceRepeatable">
       <oneOrMore>
@@ -3065,6 +3229,18 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_altGrp"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_span"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_spanGrp"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_interp"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_interpGrp"/>
       </oneOrMore>
    </define>
    <define name="tei_model.milestoneLike">
@@ -4862,7 +5038,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="ff-medieval_cuni-tei-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-10">
+            id="ff-medieval-cuni-tei-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-10">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -4921,7 +5097,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="tei_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-11">
+                  id="ff-medieval-cuni-tei-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-11">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:p">
@@ -4932,7 +5108,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-p-abstractModel-structure-p-in-l-constraint-rule-12">
+                  id="ff-medieval-cuni-tei-p-abstractModel-structure-p-in-l-constraint-rule-12">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:l//tei:p">
@@ -5118,6 +5294,7 @@ Suggested values include: 1] spoken (spoken); 2] thought (thought); 3] written (
                <ref name="tei_model.graphicLike"/>
                <ref name="tei_model.ptrLike"/>
                <ref name="tei_model.attributable"/>
+               <ref name="tei_pc"/>
                <ref name="tei_q"/>
             </choice>
          </oneOrMore>
@@ -5172,7 +5349,7 @@ Suggested values include: 1] spoken (spoken); 2] thought (thought); 3] written (
          <ref name="tei_macro.limitedContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-desc-deprecationInfo-only-in-deprecated-constraint-rule-13">
+                  id="ff-medieval-cuni-tei-desc-deprecationInfo-only-in-deprecated-constraint-rule-13">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:desc[ @type eq 'deprecationInfo']">
@@ -5272,7 +5449,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-rt-target-rt-target-not-span-constraint-rule-14">
+                  id="ff-medieval-cuni-tei-rt-target-rt-target-not-span-constraint-rule-14">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:rt/@target">
@@ -5289,7 +5466,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-rt-from-rt-from-constraint-rule-15">
+                  id="ff-medieval-cuni-tei-rt-from-rt-from-constraint-rule-15">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:rt/@from">
@@ -5306,7 +5483,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-rt-to-rt-to-constraint-rule-16">
+                  id="ff-medieval-cuni-tei-rt-to-rt-to-constraint-rule-16">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:rt/@to">
@@ -5862,7 +6039,7 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-ptr-ptrAtts-constraint-rule-17">
+                  id="ff-medieval-cuni-tei-ptr-ptrAtts-constraint-rule-17">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:ptr">
@@ -5885,7 +6062,7 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          <ref name="tei_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-ref-refAtts-constraint-rule-18">
+                  id="ff-medieval-cuni-tei-ref-refAtts-constraint-rule-18">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:ref">
@@ -5950,7 +6127,7 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-list-gloss-list-must-have-labels-constraint-rule-19">
+                  id="ff-medieval-cuni-tei-list-gloss-list-must-have-labels-constraint-rule-19">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:list[@type='gloss']">
@@ -6705,7 +6882,7 @@ Elements]</a:documentation>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-relatedItem-targetorcontent1-constraint-rule-20">
+                  id="ff-medieval-cuni-tei-relatedItem-targetorcontent1-constraint-rule-20">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:relatedItem">
@@ -6740,7 +6917,7 @@ Elements]</a:documentation>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-l-abstractModel-structure-l-in-l-constraint-rule-21">
+                  id="ff-medieval-cuni-tei-l-abstractModel-structure-l-in-l-constraint-rule-21">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:l">
@@ -6789,7 +6966,7 @@ Elements]</a:documentation>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-lg-atleast1oflggapl-constraint-rule-22">
+                  id="ff-medieval-cuni-tei-lg-atleast1oflggapl-constraint-rule-22">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:lg">
@@ -6798,7 +6975,7 @@ Elements]</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-lg-abstractModel-structure-lg-in-l-constraint-rule-23">
+                  id="ff-medieval-cuni-tei-lg-abstractModel-structure-lg-in-l-constraint-rule-23">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:lg">
@@ -7484,7 +7661,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-quotation-quotationContents-constraint-rule-24">
+                  id="ff-medieval-cuni-tei-quotation-quotationContents-constraint-rule-24">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -7769,7 +7946,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-citeStructure-match-citestructure-outer-match-constraint-rule-25">
+                  id="ff-medieval-cuni-tei-citeStructure-match-citestructure-outer-match-constraint-rule-25">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -7779,7 +7956,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-citeStructure-match-citestructure-inner-match-constraint-rule-26">
+                  id="ff-medieval-cuni-tei-citeStructure-match-citestructure-inner-match-constraint-rule-26">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -8126,6 +8303,7 @@ Suggested values include: 1] WGS84 (World Geodetic System); 2] MGRS (Military Gr
          <ref name="tei_att.global.attribute.xmllang"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -8765,7 +8943,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-div-abstractModel-structure-div-in-l-constraint-rule-27">
+                  id="ff-medieval-cuni-tei-div-abstractModel-structure-div-in-l-constraint-rule-27">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:l//tei:div">
@@ -8776,7 +8954,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-28">
+                  id="ff-medieval-cuni-tei-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-28">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:div">
@@ -8789,6 +8967,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <ref name="tei_att.global.attribute.n"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -9711,7 +9890,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-msDesc-one_ms_singleton_max-constraint-rule-29">
+                  id="ff-medieval-cuni-tei-msDesc-one_ms_singleton_max-constraint-rule-29">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -9736,7 +9915,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="tei_macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-catchwords-catchword_in_msDesc-constraint-rule-30">
+                  id="ff-medieval-cuni-tei-catchwords-catchword_in_msDesc-constraint-rule-30">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -9759,7 +9938,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-dimensions-duplicateDim-constraint-rule-31">
+                  id="ff-medieval-cuni-tei-dimensions-duplicateDim-constraint-rule-31">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -9975,7 +10154,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <ref name="tei_macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-secFol-secFol_in_msDesc-constraint-rule-32">
+                  id="ff-medieval-cuni-tei-secFol-secFol_in_msDesc-constraint-rule-32">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -9993,7 +10172,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          <ref name="tei_macro.specialPara"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-signatures-signatures_in_msDesc-constraint-rule-33">
+                  id="ff-medieval-cuni-tei-signatures-signatures_in_msDesc-constraint-rule-33">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -10072,7 +10251,7 @@ Sample values include: 1] binding; 2] endband; 3] slipcase; 4] support; 5] tie</
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-msIdentifier-msId_minimal-constraint-rule-34">
+                  id="ff-medieval-cuni-tei-msIdentifier-msId_minimal-constraint-rule-34">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -12587,7 +12766,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-relation-ref-or-key-or-name-constraint-rule-35">
+                  id="ff-medieval-cuni-tei-relation-ref-or-key-or-name-constraint-rule-35">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -12597,7 +12776,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-relation-active-mutual-constraint-rule-36">
+                  id="ff-medieval-cuni-tei-relation-active-mutual-constraint-rule-36">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -12607,7 +12786,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-relation-active-passive-constraint-rule-37">
+                  id="ff-medieval-cuni-tei-relation-active-passive-constraint-rule-37">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13213,7 +13392,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-facsimile-no_facsimile_text_nodes-constraint-rule-38">
+                  id="ff-medieval-cuni-tei-facsimile-no_facsimile_text_nodes-constraint-rule-38">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13352,7 +13531,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-path-pathmustnotbeclosed-constraint-rule-39">
+                  id="ff-medieval-cuni-tei-path-pathmustnotbeclosed-constraint-rule-39">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13405,7 +13584,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-addSpan-addSpan-requires-spanTo-constraint-rule-40">
+                  id="ff-medieval-cuni-tei-addSpan-addSpan-requires-spanTo-constraint-rule-40">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13415,7 +13594,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-addSpan-addSpan-requires-spanTo-fr-constraint-rule-41">
+                  id="ff-medieval-cuni-tei-addSpan-addSpan-requires-spanTo-fr-constraint-rule-41">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13466,7 +13645,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-damageSpan-damageSpan-requires-spanTo-constraint-rule-42">
+                  id="ff-medieval-cuni-tei-damageSpan-damageSpan-requires-spanTo-constraint-rule-42">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13476,7 +13655,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-damageSpan-damageSpan-requires-spanTo-fr-constraint-rule-43">
+                  id="ff-medieval-cuni-tei-damageSpan-damageSpan-requires-spanTo-fr-constraint-rule-43">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13497,7 +13676,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-delSpan-delSpan-requires-spanTo-constraint-rule-44">
+                  id="ff-medieval-cuni-tei-delSpan-delSpan-requires-spanTo-constraint-rule-44">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13507,7 +13686,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-delSpan-delSpan-requires-spanTo-fr-constraint-rule-45">
+                  id="ff-medieval-cuni-tei-delSpan-delSpan-requires-spanTo-fr-constraint-rule-45">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -13623,6 +13802,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <ref name="tei_att.global.attribute.xmllang"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -13679,7 +13859,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-subst-substContents1-constraint-rule-46">
+                  id="ff-medieval-cuni-tei-subst-substContents1-constraint-rule-46">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -14197,7 +14377,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-rdgGrp-only1lem-constraint-rule-47">
+                  id="ff-medieval-cuni-tei-rdgGrp-only1lem-constraint-rule-47">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:rdgGrp">
@@ -14293,6 +14473,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          <ref name="tei_att.global.attribute.xmllang"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -14380,7 +14561,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-variantEncoding-location-variantEncodingLocation-constraint-rule-48">
+                  id="ff-medieval-cuni-tei-variantEncoding-location-variantEncodingLocation-constraint-rule-48">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       context="tei:variantEncoding">
@@ -14550,7 +14731,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          <ref name="tei_macro.abContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-ab-abstractModel-structure-ab-in-l-constraint-rule-49">
+                  id="ff-medieval-cuni-tei-ab-abstractModel-structure-ab-in-l-constraint-rule-49">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -14587,6 +14768,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
          <ref name="tei_att.global.attribute.xmllang"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -14754,7 +14936,7 @@ Suggested values include: 1] d (days); 2] h (hours); 3] min (minutes); 4] s (sec
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="ff-medieval_cuni-tei-join-joinTargets3-constraint-rule-50">
+                  id="ff-medieval-cuni-tei-join-joinTargets3-constraint-rule-50">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -14985,6 +15167,7 @@ Suggested values include: 1] d (days); 2] h (hours); 3] min (minutes); 4] s (sec
          <ref name="tei_att.global.attribute.xmllang"/>
          <ref name="tei_att.global.attribute.xmlbase"/>
          <ref name="tei_att.global.attribute.xmlspace"/>
+         <ref name="tei_att.global.analytic.attribute.ana"/>
          <ref name="tei_att.global.change.attribute.change"/>
          <ref name="tei_att.global.facs.attribute.facs"/>
          <ref name="tei_att.global.linking.attribute.corresp"/>
@@ -15054,6 +15237,392 @@ Suggested values include: 1] d (days); 2] h (hours); 3] min (minutes); 4] s (sec
                </list>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_att.lexicographic.normalized.attributes">
+      <ref name="tei_att.lexicographic.normalized.attribute.norm"/>
+      <ref name="tei_att.lexicographic.normalized.attribute.orig"/>
+   </define>
+   <define name="tei_att.lexicographic.normalized.attribute.norm">
+      <optional>
+         <attribute name="norm">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(normalized) provides the normalized/standardized form of information present in the source text in a non-normalized form.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.lexicographic.normalized.attribute.orig">
+      <optional>
+         <attribute name="orig">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(original) gives the original string or is the empty string when the element does not appear in the source text.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.linguistic.attributes">
+      <ref name="tei_att.lexicographic.normalized.attributes"/>
+      <ref name="tei_att.linguistic.attribute.lemma"/>
+      <ref name="tei_att.linguistic.attribute.lemmaRef"/>
+      <ref name="tei_att.linguistic.attribute.pos"/>
+      <ref name="tei_att.linguistic.attribute.msd"/>
+      <ref name="tei_att.linguistic.attribute.join"/>
+   </define>
+   <define name="tei_att.linguistic.attribute.lemma">
+      <optional>
+         <attribute name="lemma">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a lemma (base form) for the word, typically uninflected and serving both as an identifier (e.g. in dictionary contexts, as a headword), and as a basis for potential inflections.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.linguistic.attribute.lemmaRef">
+      <optional>
+         <attribute name="lemmaRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a pointer to a definition of the lemma for the word, for example in an online lexicon.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.linguistic.attribute.pos">
+      <optional>
+         <attribute name="pos">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(part of speech) indicates the part of speech assigned to a token (i.e. information on whether it is a noun, adjective, or verb), usually according to some official reference vocabulary (e.g. for German: STTS, for English: CLAWS, for Polish: NKJP, etc.).</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.linguistic.attribute.msd">
+      <optional>
+         <attribute name="msd">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(morphosyntactic description) supplies morphosyntactic information for a token, usually according to some official reference vocabulary (e.g. for German: <a xmlns="http://www.w3.org/1999/xhtml"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  href="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-1999.pdf">STTS-large tagset</a>; for a feature description system designed as (pragmatically) universal, see <a xmlns="http://www.w3.org/1999/xhtml"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  href="http://universaldependencies.org/u/feat/index.html">Universal Features</a>).</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.linguistic.attribute.join">
+      <optional>
+         <attribute name="join">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">when present, provides information on whether the token in question is adjacent to another, and if so, on which side.</a:documentation>
+            <choice>
+               <value>no</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the token is not adjacent to another</a:documentation>
+               <value>left</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on the left side of the token</a:documentation>
+               <value>right</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on the right side of the token</a:documentation>
+               <value>both</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on either side of the token</a:documentation>
+               <value>overlap</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the token overlaps with another; other devices (specifying the extent and the area of overlap) are needed to more precisely locate this token in the character stream</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.global.analytic.attributes">
+      <ref name="tei_att.global.analytic.attribute.ana"/>
+   </define>
+   <define name="tei_att.global.analytic.attribute.ana">
+      <optional>
+         <attribute name="ana">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(analysis) indicates one or more elements containing interpretations of the element on which the <code xmlns="http://www.w3.org/1999/xhtml"
+                     xmlns:rng="http://relaxng.org/ns/structure/1.0">@ana</code> attribute appears.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_s">
+      <element name="s">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(s-unit) contains a sentence-like division of a text. [18.1. Linguistic Segment Categories 8.4.1. Segmentation]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="ff-medieval-cuni-tei-s-noNestedS-constraint-rule-51">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:s">
+               <sch:report test="tei:s">You may not nest one &lt;s&gt; element within another: use &lt;seg&gt; instead.</sch:report>
+            </sch:rule>
+         </pattern>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_cl">
+      <element name="cl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(clause) represents a grammatical clause. [18.1. Linguistic Segment Categories]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_phr">
+      <element name="phr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(phrase) represents a grammatical phrase. [18.1. Linguistic Segment Categories]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_w">
+      <element name="w">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(word) represents a grammatical (not necessarily orthographic) word. [18.1. Linguistic Segment Categories 18.4.2. Lightweight Linguistic Annotation]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.gLike"/>
+               <ref name="tei_seg"/>
+               <ref name="tei_w"/>
+               <ref name="tei_m"/>
+               <ref name="tei_c"/>
+               <ref name="tei_pc"/>
+               <ref name="tei_model.global"/>
+               <ref name="tei_model.lPart"/>
+               <ref name="tei_model.hiLike"/>
+               <ref name="tei_model.pPart.edit"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.linguistic.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_m">
+      <element name="m">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(morpheme) represents a grammatical morpheme. [18.1. Linguistic Segment Categories]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.gLike"/>
+               <ref name="tei_model.hiLike"/>
+               <ref name="tei_seg"/>
+               <ref name="tei_m"/>
+               <ref name="tei_c"/>
+               <ref name="tei_model.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <optional>
+            <attribute name="baseForm">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the morpheme's base form.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_c">
+      <element name="c">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character) represents a character. [18.1. Linguistic Segment Categories]</a:documentation>
+         <ref name="tei_macro.xtext"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_pc">
+      <element name="pc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark. [18.1.2. Below the Word Level 18.4.2. Lightweight Linguistic Annotation]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.gLike"/>
+               <ref name="tei_c"/>
+               <ref name="tei_model.pPart.edit"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.linguistic.attributes"/>
+         <ref name="tei_att.segLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <optional>
+            <attribute name="force">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the extent to which this punctuation mark conventionally separates words or phrases.</a:documentation>
+               <choice>
+                  <value>strong</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the punctuation mark is a word separator</a:documentation>
+                  <value>weak</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the punctuation mark is not a word separator</a:documentation>
+                  <value>inter</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the punctuation mark may or may not be a word separator</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="unit">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides a name for the kind of unit delimited by this punctuation mark.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="pre">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether this punctuation mark precedes or follows the unit it delimits.</a:documentation>
+               <data type="boolean"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_span">
+      <element name="span">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">associates an interpretative annotation directly with a span of text. [18.3. Spans and Interpretations]</a:documentation>
+         <ref name="tei_macro.phraseSeq.limited"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="ff-medieval-cuni-tei-span-target-from-constraint-rule-52">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:span">
+               <sch:report test="@from and @target">
+          Only one of the attributes @target and @from may be supplied on &lt;<sch:name/>&gt;.
+        </sch:report>
+            </sch:rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="ff-medieval-cuni-tei-span-targetto-constraint-rule-53">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:span">
+               <sch:report test="@to and @target">
+          Only one of the attributes @target and @to may be supplied on &lt;<sch:name/>&gt;.
+        </sch:report>
+            </sch:rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="ff-medieval-cuni-tei-span-tonotfrom-constraint-rule-54">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:span">
+               <sch:report test="@to and not(@from)">
+          If @to is supplied on &lt;<sch:name/>&gt;, @from must be supplied as well.
+        </sch:report>
+            </sch:rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="ff-medieval-cuni-tei-span-tofrom-constraint-rule-55">
+            <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:span">
+               <sch:report test="contains(normalize-space(@to),' ') or contains(normalize-space(@from),' ')">
+          The attributes @to and @from on &lt;<sch:name/>&gt; may each contain only a single value.
+        </sch:report>
+            </sch:rule>
+         </pattern>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.interpLike.attributes"/>
+         <ref name="tei_att.pointing.attributes"/>
+         <optional>
+            <attribute name="from">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a <code xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:rng="http://relaxng.org/ns/structure/1.0">@to</code> attribute, gives the identifier of the node of the entire span of text being annotated.</a:documentation>
+               <data type="anyURI">
+                  <param name="pattern">\S+</param>
+               </data>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="to">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the identifier of the node which is the end-point of the span of text being annotated.</a:documentation>
+               <data type="anyURI">
+                  <param name="pattern">\S+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_spanGrp">
+      <element name="spanGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(span group) collects together span tags. [18.3. Spans and Interpretations]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.descLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="tei_span"/>
+            </zeroOrMore>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.interpLike.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_interp">
+      <element name="interp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(interpretation) summarizes a specific interpretative annotation which can be linked to a span of text. [18.3. Spans and Interpretations]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.gLike"/>
+               <ref name="tei_model.descLike"/>
+               <ref name="tei_model.certLike"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.interpLike.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_interpGrp">
+      <element name="interpGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(interpretation group) collects together a set of related interpretations which share responsibility or type. [18.3. Spans and Interpretations]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="tei_model.descLike"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <ref name="tei_interp"/>
+            </oneOrMore>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.cmc.attributes"/>
+         <ref name="tei_att.interpLike.attributes"/>
          <empty/>
       </element>
    </define>
