@@ -1,0 +1,10 @@
+# Packages allowed to run install scripts. esbuild needs its postinstall
+# to set up the native binary used by Vite; nothing else does.
+allowBuilds:
+  esbuild: true
+
+# VitePress 1.6 pins Vite 5, which has unpatched dev-server advisories.
+# Vite 6.4.4+ is patched and works with VitePress 1.6. Remove this once
+# VitePress ships with a patched Vite.
+overrides:
+  vite: ^6.4.4

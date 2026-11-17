@@ -1,0 +1,27 @@
+/* Colours carried over from the VuePress 1 palette ($accentColor #2A304E). */
+:root {
+  --vp-c-brand-1: #2a304e;
+  --vp-c-brand-2: #3b4470;
+  --vp-c-brand-3: #2a304e;
+  --vp-c-brand-soft: rgba(42, 48, 78, 0.12);
+  --vp-c-text-1: #2c3e50;
+  --vp-button-brand-bg: #2a304e;
+  --vp-button-brand-hover-bg: #3b4470;
+  --vp-button-brand-active-bg: #1f2439;
+}
+
+/* Tables use the full content width. */
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+/* Logo row on the home page. */
+.flex--spread p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 70%;
+  margin: 5rem auto 3rem;
+}

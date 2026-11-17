@@ -8,17 +8,16 @@
     "email": "martin.rocek@ff.cuni.cz"
   },
   "engines": {
-    "node": "16.x"
+    "node": ">=18"
   },
   "repository": "/LINDAT - Medieval Manuscripts",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "preview": "vitepress preview src"
   },
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.6.0",
-    "@vuepress/plugin-medium-zoom": "^1.6.0",
-    "vuepress": "^1.5.3"
+    "vitepress": "^1.6.4"
   }
 }

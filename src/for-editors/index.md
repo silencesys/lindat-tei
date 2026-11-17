@@ -1,4 +1,4 @@
-# Editorial style guide <Badge text="czech only" type="error"/>
+# Editorial style guide <Badge type="danger" text="czech only" />
 
 Základním vodítkem jsou Pravidla pro transkripci latinských rukopisných textů od Bohumila Ryby a přihlížíme také k edičním zásadám publikovaným Anežkou Vidmanovou.
 

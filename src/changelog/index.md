@@ -22,6 +22,7 @@ The guidelines now come with a schema, and the rules on the pages were corrected
 - **`measure`** uses `unit` (was `units`, which is not a TEI attribute).
 - **`biblScope`** uses `unit="page"` (was `type="pages"`).
 - **`xml-model` lines** point to `ff-medieval_cuni-tei.rng` and `lindat.sch` instead of `tei_all`.
+- The site is built with VitePress instead of VuePress 1, which is no longer maintained. Page addresses stay the same; the site now has full-text search.
 
 ### Fixed
 - General TEI structure: `body` sits inside `text`.

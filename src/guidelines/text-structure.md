@@ -203,6 +203,7 @@ using `quote` element, but `ref` and `bibl` elements can still be used.
 ```
 Note that `quote` and `cit` elements were omitted and `ref` was kept.
 :::
+:::
 
 #### Reference
 ```xml
@@ -241,6 +242,7 @@ In case of a biblical citations with descriptions were used, following snippet s
   </cRefPattern>
 </refsDecl>
 ```
+:::
 :::
 
 ##### Other sources

@@ -14,4 +14,4 @@ Most of the descriptions are taken from the official TEI5P guidelines. Because o
 
 The following template can be used to quickly start with your encoding. This snippet contains all necessary items in the `teiHeader` and it is up to you to fill them with information you want! The template is linked to the LINDAT schema; download the schema files from the [home page](/#schema) and keep them in the same folder.
 
-:floppy_disk: <a href="../files/quick_start.xml" download>Download the file</a>
+:floppy_disk: <a href="/files/quick_start.xml" download>Download the file</a>
