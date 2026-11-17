@@ -1,6 +1,8 @@
 <p align="center">
-<img src="./src/.vuepress/public/logo.png" alt="UŘLS TEI Cookbook"/>
+<img src="./src/public/hero-02.png" alt="Medieval CUNI TEI Cookbook" width="400"/>
 </p>
+
+<h1 align="center">Medieval CUNI TEI Cookbook</h1>
 
 <p align="center">
 Guidelines for the manuscript encoding incorporating rules of TEI.

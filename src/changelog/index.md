@@ -7,11 +7,12 @@ All notable changes to these guidelines, the schema and the templates.
 The guidelines now come with a schema, and the rules on the pages were corrected to match it. **Files encoded under version 1 will not pass the schema until they are updated**, see [What to change in existing files](#what-to-change-in-existing-files).
 
 ### Added
-- LINDAT schema, downloadable from the [home page](/#schema):
+- Schema, downloadable from the [guidelines introduction](../guidelines/#schema):
   - `ff-medieval_cuni-tei.rng`: RELAX NG schema (elements and allowed attribute values)
-  - `lindat.sch`: Schematron rules (IDs, pointers, mandatory parts of the header)
-  - `lindat.odd`: ODD source of the schema
+  - `ff-medieval_cuni-tei.sch`: Schematron rules (IDs, pointers, mandatory parts of the header)
+  - `ff-medieval_cuni-tei.odd`: ODD source of the schema
 - New [quick start template](/files/quick_start.xml) that validates against the schema.
+- New guidelines page [Schema and validation](../guidelines/schema.md): how to connect and validate a file, what the schema checks, and how it differs from plain TEI.
 - Notes where the LINDAT schema differs from plain TEI: `link` with text and one target ([People and places](../guidelines/people-and-places.md#links-to-other-resources)) and `damage` with `reason` ([Text corrections](../guidelines/text-corrections.md#marking-damaged-part)).
 - Allowed values that the examples already used: `book` for bibliography types, `other` for `objectDesc/@form`, `burnt-hole-in-original` and `translation` for `supplied/@reason`, `deletion` for `gap/@reason`.
 
@@ -21,7 +22,7 @@ The guidelines now come with a schema, and the rules on the pages were corrected
 - **Certainty of `unclear`** uses TEI's values: `high`, `medium`, `low`, `unknown` (was high, middle, low, uncertain).
 - **`measure`** uses `unit` (was `units`, which is not a TEI attribute).
 - **`biblScope`** uses `unit="page"` (was `type="pages"`).
-- **`xml-model` lines** point to `ff-medieval_cuni-tei.rng` and `lindat.sch` instead of `tei_all`.
+- **`xml-model` lines** point to `ff-medieval_cuni-tei.rng` and `ff-medieval_cuni-tei.sch` instead of `tei_all`.
 - The site is built with VitePress instead of VuePress 1, which is no longer maintained. Page addresses stay the same; the site now has full-text search.
 
 ### Fixed

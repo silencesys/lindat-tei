@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="lindat.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="lindat.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!--
+  LINDAT quick start, corrected to validate against lindat.rng and lindat.sch.
+  Changes from the original template: schema lines point to the LINDAT schema; language codes cs/la;
+  every witness, person, place, org and bibl has an ID with the recommended prefix; bibl has @type.
+-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="la">
+                  <!--
+                    name of the transcribed document, do not forget to change the xml:lang attribute
+                    see: https://lindat.coders.tools/guidelines/tei-header.html#title
+                  -->
+                </title>
+                <author xml:id="Author_Name">
+                  <!--
+                    name of the author of the digital text (name surname)
+                    see: https://lindat.coders.tools/guidelines/tei-header.html#author
+                  -->
+                </author>
+                <!-- <editor xml:id="Editor_Name">name surname</editor>  (only if there is an editor) -->
+            </titleStmt>
+            <editionStmt>
+              <p>
+              <!--
+                Can be omitted if you do not use any already existing edition.
+                see: https://lindat.coders.tools/guidelines/tei-header.html#edition-statement
+              -->
+              </p>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Faculty of Arts</publisher>
+                <pubPlace>
+                    <country>Czech Republic</country>
+                    <settlement>Prague</settlement>
+                </pubPlace>
+                <date when="2026-01-01">
+                  <!--
+                    Write the publication date, DO NOT forget to set the when attribute (YYYY-MM-DD) as well.
+                    see: https://lindat.coders.tools/guidelines/tei-header.html#date
+                  -->
+                </date>
+            </publicationStmt>
+            <sourceDesc>
+                <listWit>
+                  <witness xml:id="Witness_A">
+                    <!--
+                      siglum and institution, e.g. SOAT_A_17; describe it with msDesc
+                      see: https://lindat.coders.tools/guidelines/witness-description.html
+                    -->
+                  </witness>
+                  <!-- add more witnesses if applicable -->
+                </listWit>
+                <listPerson>
+                  <!--
+                    List of people
+                    see: https://lindat.coders.tools/guidelines/people-and-places.html#marking-up-people
+                  -->
+                  <person xml:id="Person_Example"></person>
+                </listPerson>
+                <listPlace>
+                  <!--
+                    List of places
+                    see: https://lindat.coders.tools/guidelines/people-and-places.html#describing-places
+                  -->
+                  <place xml:id="Place_Example"></place>
+                </listPlace>
+                <listOrg>
+                  <!--
+                    List of organizations
+                    see: https://lindat.coders.tools/guidelines/people-and-places.html#lists-of-organizations
+                  -->
+                  <org xml:id="Org_Example"></org>
+                </listOrg>
+                <listBibl>
+                  <head>Already known editions</head>
+                  <!--
+                    List of already known editions of the text
+                    see: https://lindat.coders.tools/guidelines/bibliography.html
+                  -->
+                  <bibl xml:id="Edition_Example" n="1" type="edition"></bibl>
+                </listBibl>
+                <listBibl>
+                  <head>Used bibliography</head>
+                  <!--
+                    List of used bibliography
+                    see: https://lindat.coders.tools/guidelines/bibliography.html
+                  -->
+                  <bibl xml:id="Bibl_Example" n="1" type="monography"></bibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+      <!--
+        text of the document
+        see: https://lindat.coders.tools/guidelines/text-structure.html
+      -->
+      <body>
+         <div xml:lang="la" type="original">
+           <p xml:id="p1"></p>
+         </div>
+         <div xml:lang="cs" type="translation">
+           <p ana="#p1"></p>
+         </div>
+      </body>
+    </text>
+</TEI>

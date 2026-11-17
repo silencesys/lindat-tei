@@ -12,6 +12,23 @@ Most of the descriptions are taken from the official TEI5P guidelines. Because o
 
 ## Quick start
 
-The following template can be used to quickly start with your encoding. This snippet contains all necessary items in the `teiHeader` and it is up to you to fill them with information you want! The template is linked to the LINDAT schema; download the schema files from the [home page](/#schema) and keep them in the same folder.
+The following template can be used to quickly start with your encoding. This snippet contains all necessary items in the `teiHeader` and it is up to you to fill them with information you want! The template is already linked to the schema, see below.
 
 :floppy_disk: <a href="/files/quick_start.xml" download>Download the file</a>
+
+## Schema
+
+Since [version 2.0.0](/changelog/) the guidelines come with a schema that checks your file against the rules on these pages. Download both schema files into the same folder as your XML file: the `xml-model` lines at the top of the template point to them, and your XML editor (e.g. Oxygen) will then check the file as you write.
+
+| File | What it checks |
+| :- | :- |
+| <a href="/files/ff-medieval_cuni-tei.rng" download>ff-medieval_cuni-tei.rng</a> | RELAX NG schema: which elements and attribute values are allowed |
+| <a href="/files/ff-medieval_cuni-tei.sch" download>ff-medieval_cuni-tei.sch</a> | Schematron rules: IDs, pointers and the mandatory parts of the header |
+| <a href="/files/ff-medieval_cuni-tei.odd" download>ff-medieval_cuni-tei.odd</a> | ODD source of the schema, only for schema maintainers |
+
+```xml
+<?xml-model href="ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="ff-medieval_cuni-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+```
+
+What the schema checks, how to validate a file and how the schema differs from plain TEI is described in [Schema and validation](./schema.md).

@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en',
-  title: 'UŘLS TEI Cookbook',
+  title: 'Medieval CUNI TEI Cookbook',
   description: 'Guidelines for manuscript description incorporating TEI.',
 
   head: [
@@ -34,6 +34,7 @@ export default defineConfig({
           text: 'Guidelines',
           items: [
             { text: 'Introduction', link: '/guidelines/' },
+            { text: 'Schema and validation', link: '/guidelines/schema' },
             { text: 'General TEI structure', link: '/guidelines/common-structure-and-elements' },
           ],
         },

@@ -25,3 +25,67 @@
   max-width: 70%;
   margin: 5rem auto 3rem;
 }
+
+/* ------------------------------------------------------------------
+   Home page: the layout of the original VuePress site, at every width:
+   large illustration on top, then the title, tagline and button,
+   all centred. VitePress puts the image to the right on wide screens.
+   The extra .VPContent .VPHome is needed to outrank VitePress's scoped
+   styles (which add an attribute selector) at desktop widths.
+   ------------------------------------------------------------------ */
+:root {
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+}
+
+.VPContent .VPHome .VPHero.has-image .container {
+  flex-direction: column;
+  text-align: center;
+}
+
+.VPContent .VPHome .VPHero.has-image .main {
+  order: 2;
+  width: 100%;
+  max-width: none;
+}
+
+.VPContent .VPHome .VPHero.has-image .image {
+  order: 1;
+  margin: 0 auto 2rem;
+  min-height: 0;
+}
+
+.VPContent .VPHome .VPHero.has-image .image-container {
+  width: auto;
+  height: auto;
+  transform: none;
+}
+
+.VPContent .VPHome .VPHero.has-image .image-bg {
+  display: none;
+}
+
+.VPContent .VPHome .VPHero.has-image .image-src {
+  position: static;
+  transform: none;
+  width: 100%;
+  max-width: 650px;
+  max-height: none;
+}
+
+.VPContent .VPHome .VPHero.has-image .name,
+.VPContent .VPHome .VPHero.has-image .tagline {
+  margin: 0 auto;
+  max-width: none;
+  text-align: center;
+}
+
+.VPContent .VPHome .VPHero.has-image .tagline {
+  padding-top: 0.75rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.VPContent .VPHome .VPHero.has-image .actions {
+  justify-content: center;
+  padding-top: 2rem;
+}
