@@ -16,8 +16,8 @@ Put these two lines at the top of your file, right after the XML declaration, an
 
 ```xml{2-3}
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="ff-medieval_cuni-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://lindat.coders.tools/files/ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://lindat.coders.tools/files/ff-medieval_cuni-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <!-- … -->
 </TEI>
