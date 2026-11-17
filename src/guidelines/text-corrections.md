@@ -25,7 +25,7 @@ element must be used if expansion of the abbreviation is provided.
 ```xml{3}
 <choice>
   <abbr>Arthemandꝰ</abbr>
-  <expan>Arthemand<ex>us<ex></expan>
+  <expan>Arthemand<ex>us</ex></expan>
 </choice>
 ```
 Sometimes, it is desirable to expand the abbreviation, that can be achieved by using the `expan` element. However, the element can not stand alone, and the
@@ -124,9 +124,11 @@ Signifies text supplied by the transcriber or editor for any reason; for example
 | Reasons | Description
 | :- | :-
 | omitted-in-original | The word was omitted in the original text.
-| overbinding | The text was placed in overbiding.
+| overbinding | The text was placed in overbinding.
 | faded-ink | The word was missing due to the faded ink.
 | lost-folio | The text was missing due to the lost folio, but was found somewhere else.
+| burnt-hole-in-original | The text was lost in a burnt hole in the original.
+| translation | The word was added by the translator; it is not in the original.
 
 ::: tip
 Note that whitespaces are separators, that is why are the phrases describing the reason hyphenated.
@@ -144,7 +146,7 @@ The element `surplus` marks text present in the source which the editor believes
 <lb break="no"/>mini et replete terram, et subic<gap reason="cut-out" extent="9 words"/>
 <lb break="no"/>bus maris, et uolatilibus celi <gap reason="cut-out" extent="4 words"/>
 ```
-The element `gap` indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. As can be seen there are two attributes `reason` and `extent`. The `reason` attribute contains reason why there is gap, see table of sample reasons. The `exten` attribute describes the expected length of the missing part.
+The element `gap` indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. As can be seen there are two attributes `reason` and `extent`. The `reason` attribute contains reason why there is gap, see table of sample reasons. The `extent` attribute describes the expected length of the missing part.
 
 | Reason | Description
 | :- | :-
@@ -153,6 +155,7 @@ The element `gap` indicates a point where material has been omitted in a transcr
 | cancelled | the rest of the text has not been completed
 | fire | the part of the text was damaged by fire
 | faded | the text is faded
+| deletion | the text was deleted (crossed out, erased) and cannot be read
 
 ### Damaged text is illegible, but text is supplied
 #### Marking damaged part
@@ -162,6 +165,10 @@ I <damage reason="fire" extent="1 word">
 </damage> lazy when I wrote this text.
 ```
 Contains an area of damage to the text witness. Similarly as in case of `gap` element there are attributes `reason` and `extent`, see [gap](#damaged-text-is-illegible-no-text-is-supplied).
+
+::: warning Not plain TEI
+In standard TEI the `damage` element has no `reason` attribute. The LINDAT schema allows it, with the same values as `gap`. If your file has to validate against plain TEI (`tei_all`), use `agent="fire"` instead.
+:::
 
 #### Supplying editor's text
 ```xml{2}
@@ -184,8 +191,8 @@ When the text is partially legible, following scheme should be used:
 #### Marking the unclear text
 ```xml{3}
 … peruenit. <del>
-<gap reason=”deletion” extent=”4 or 5 words”/>
-<unclear reason="blackened-out" cert=”middle”>sunt</unclear>
+<gap reason="deletion" extent="4 or 5 words"/>
+<unclear reason="blackened-out" cert="medium">sunt</unclear>
 </del> Tertio …
 ```
 Contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. The attribute `reason` should provide short indication of why the material is not readable, [see the reasons table](#damaged-text-is-illegible-no-text-is-supplied). The `cert` signifies the degree of certainty associated with the intervention or interpretation.
@@ -193,9 +200,9 @@ Contains a word, phrase, or passage which cannot be transcribed with certainty b
 | Certainity | Degree of certainity
 | :- | -:
 | high | 70-100%
-| middle | 40-70%
+| medium | 40-70%
 | low | 10-40%
-| uncertain | 0-10%
+| unknown | 0-10%
 
 ### Damaged text is perfectly legible
 There is no need to mark it up. Use `del` or `damage`.

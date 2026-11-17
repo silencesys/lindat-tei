@@ -21,13 +21,13 @@ The `<fileDesc>` element consists of four components:
       <publicationStmt>
         <!-- Publication statement -->
       </publicationStmt>
-	  <encodingDesc>
-        <!-- Encoding description -->
-      </encodingDesc>
       <sourceDesc>
         <!-- Source description -->
       </sourceDesc>
     </fileDesc>
+    <encodingDesc>
+      <!-- Encoding description -->
+    </encodingDesc>
   </teiHeader>
   <!-- Body, see TEI Body chapter -->
 </TEI>
@@ -39,9 +39,9 @@ document.
 
 #### Title
 ```xml
-<title xml:lang="lat">Somniale Danielis</title>
+<title xml:lang="la">Somniale Danielis</title>
 ```
-The element should always contain title of the document and have set `xml:lang` attribute with ISO-639-3 language code.
+The element should always contain title of the document and have set `xml:lang` attribute with a language code (BCP 47).
 Name of the document can be anything, but it is strongly advised to keep the name of the source text.
 For a list of language codes see [language codes](./language-codes.md). The `<title>` tag can be repeated as many times
 as needed, but the `xml:lang` should be always set to a different language.
@@ -60,13 +60,13 @@ It supplies a statement of responsibility for the intellectual content of a text
 ::: details Show example
 ```xml
 <titleStmt>
-	<title xml:lang="lat">[Colophon]: Qui me scribebat, nomen...</title>
-	<title xml:lang="cze">Kolofón: Ten, který mě napsal, měl jméno...</title>
-	<title xml:lang="eng">Colophon: The one who wrote me was...</title>
+	<title xml:lang="la">[Colophon]: Qui me scribebat, nomen...</title>
+	<title xml:lang="cs">Kolofón: Ten, který mě napsal, měl jméno...</title>
+	<title xml:lang="en">Colophon: The one who wrote me was...</title>
 	<author xml:id="Author_Unknown">
-	   <name xml:lang="eng">Unknown</name>
-	   <name xml:lang="cze">Neznámý</name>
-	   <name xml:lang="lat">Ignotus</name>
+	   <name xml:lang="en">Unknown</name>
+	   <name xml:lang="cs">Neznámý</name>
+	   <name xml:lang="la">Ignotus</name>
 	</author>
 	<respStmt>
 	   <resp>Transcribed and encoded by</resp>
@@ -95,8 +95,8 @@ no editors.
 ::: details See valid title statement
 ```xml
 <titleStmt>
-  <title xml:lang="lat">Somniale Danielis</title>
-  <title xml:lang="eng">Dreambook of Daniel</title>
+  <title xml:lang="la">Somniale Danielis</title>
+  <title xml:lang="en">Dreambook of Daniel</title>
   <author>Martin Roček</author>
 </titleStmt>
 ```
@@ -112,7 +112,7 @@ An edition statement is optional for the first release of a computer file; it is
 #### Edition
 ```xml
 <edition xml:id="Edition_1S" n="1.0">
-  <title xml:lang="eng"></title>
+  <title xml:lang="en"></title>
 </edition>
 ```
 Every edition should be inside the `<edition>` element. `xml:id` attribute can be used to link to a particular edition
@@ -120,7 +120,7 @@ in text, it is recommended to prefix edition with `Edition_` string. The `n` att
 
 #### Title
 ```xml
-<title xml:lang="eng">Somniale Danielis: the medieval dreambook with thematic annotations</title>
+<title xml:lang="en">Somniale Danielis: the medieval dreambook with thematic annotations</title>
 ```
 Likewise in the `<titleStmt>`, this element should contain title of the edition with set `xml:lang` attribute. See
 table of the [language codes](./language-codes.md) for valid language abbreviations.
@@ -154,7 +154,7 @@ If, for example, the digital edition of this version of Somniale Danielis builds
 ```xml
 <editionStmt>
   <edition xml:id="Edition_2.0" n="2.0">
-    <title xml:lang="eng">Somniale Danielis: the Medieval Dreambook with thematic annotations</title>
+    <title xml:lang="en">Somniale Danielis: the Medieval Dreambook with thematic annotations</title>
     <date when="2020-09-30">2020</date>
     <note>Thematic annotations were added to the two oldest fragments of the Somniale Danielis.</note>
   </edition>
@@ -245,7 +245,7 @@ This source description contains additional lists which are described in full on
     <org xml:id="catholic-church"></org>
   </listOrg>
   <listBibl>
-    <bibl xml:id="Bib_RE_TAC" n="1"></bibl>
+    <bibl xml:id="Bibl_RE_TAC" n="1" type="book"></bibl>
   </listBibl>
 </sourceDesc>
 ```
@@ -269,11 +269,11 @@ paragraphs `p` or sub-components.
 <profileDesc>
 	<textClass>
 		<keywords>
-			<term type="genre" xml:lang="eng">Riddles</term>
-			<term type="genre" xml:lang="cze">Hádanky</term>
-			<term type="genre" xml:lang="lat">Aenigmata</term>
-			<term type="form" xml:lang="eng">Unclear</term>
-			<term type="form" xml:lang="cze">Nejasné</term>
+			<term type="genre" xml:lang="en">Riddles</term>
+			<term type="genre" xml:lang="cs">Hádanky</term>
+			<term type="genre" xml:lang="la">Aenigmata</term>
+			<term type="form" xml:lang="en">Unclear</term>
+			<term type="form" xml:lang="cs">Nejasné</term>
 		</keywords>
 	</textClass>
 </profileDesc>

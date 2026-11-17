@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/xsd/tei_all.xsd" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://tei-c.org/Vault/P5/current/xml/tei/custom/schema/xsd/tei_all.xsd" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="lindat.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!--
+  LINDAT quick start, corrected to validate against ff-medieval_cuni-tei.rng and lindat.sch.
+  Changes from the original template: schema lines point to the LINDAT schema; language codes cs/la;
+  every witness, person, place, org and bibl has an ID with the recommended prefix; bibl has @type.
+-->
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title xml:lang="lat">
+                <title xml:lang="la">
                   <!--
                     name of the transcribed document, do not forget to change the xml:lang attribute
                     see: https://lindat.coders.tools/guidelines/tei-header.html#title
                   -->
                 </title>
-                <author>
+                <author xml:id="Author_Name">
                   <!--
-                    name of the author of the digital text
+                    name of the author of the digital text (name surname)
                     see: https://lindat.coders.tools/guidelines/tei-header.html#author
                   -->
                 </author>
-                <editor>
-                  <!--
-                    name of the editor if any of the digital text
-                    see: https://lindat.coders.tools/guidelines/tei-header.html#editor
-                  -->
-                </editor>
+                <!-- <editor xml:id="Editor_Name">name surname</editor>  (only if there is an editor) -->
             </titleStmt>
             <editionStmt>
               <p>
@@ -39,19 +38,18 @@
                     <country>Czech Republic</country>
                     <settlement>Prague</settlement>
                 </pubPlace>
-                <date when="2020-10-01">
+                <date when="2026-01-01">
                   <!--
-                    Write the publication date, DO NOT forget to set when attribute to correct date as well.
-                    see: https://lindat.coders.tools/guidelines/tei-header.html#date-2 
+                    Write the publication date, DO NOT forget to set the when attribute (YYYY-MM-DD) as well.
                     see: https://lindat.coders.tools/guidelines/tei-header.html#date
                   -->
                 </date>
-            </publicationStmt>   
+            </publicationStmt>
             <sourceDesc>
                 <listWit>
-                  <witness>
+                  <witness xml:id="Witness_A">
                     <!--
-                      list of witnesses
+                      siglum and institution, e.g. SOAT_A_17; describe it with msDesc
                       see: https://lindat.coders.tools/guidelines/witness-description.html
                     -->
                   </witness>
@@ -62,21 +60,21 @@
                     List of people
                     see: https://lindat.coders.tools/guidelines/people-and-places.html#marking-up-people
                   -->
-                  <person xml:id="C4"></person>
+                  <person xml:id="Person_Example"></person>
                 </listPerson>
                 <listPlace>
                   <!--
                     List of places
-                    see: https://lindat.coders.tools/guidelines/people-and-places.html#marking-up-people
+                    see: https://lindat.coders.tools/guidelines/people-and-places.html#describing-places
                   -->
-                  <place xml:id="rome"></place>
+                  <place xml:id="Place_Example"></place>
                 </listPlace>
                 <listOrg>
                   <!--
                     List of organizations
-                    see: https://lindat.coders.tools/guidelines/people-and-places.html#marking-up-people
+                    see: https://lindat.coders.tools/guidelines/people-and-places.html#lists-of-organizations
                   -->
-                  <org xml:id="catholic-church"></org>
+                  <org xml:id="Org_Example"></org>
                 </listOrg>
                 <listBibl>
                   <head>Already known editions</head>
@@ -84,7 +82,7 @@
                     List of already known editions of the text
                     see: https://lindat.coders.tools/guidelines/bibliography.html
                   -->
-                  <bibl xml:id="kEdition_LM_SD" n="1"></bibl>
+                  <bibl xml:id="Edition_Example" n="1" type="edition"></bibl>
                 </listBibl>
                 <listBibl>
                   <head>Used bibliography</head>
@@ -92,22 +90,22 @@
                     List of used bibliography
                     see: https://lindat.coders.tools/guidelines/bibliography.html
                   -->
-                  <bibl xml:id="Bib_RE_TAC" n="1"></bibl>
+                  <bibl xml:id="Bibl_Example" n="1" type="monography"></bibl>
                 </listBibl>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
-    <text xmlns="http://www.tei-c.org/ns/1.0">
+    <text>
       <!--
         text of the document
         see: https://lindat.coders.tools/guidelines/text-structure.html
       -->
       <body>
-         <div xml:lang="lat" type="original">
-
+         <div xml:lang="la" type="original">
+           <p xml:id="p1"></p>
          </div>
-         <div xml:lang="cze" type="translation">
-
+         <div xml:lang="cs" type="translation">
+           <p ana="#p1"></p>
          </div>
       </body>
     </text>

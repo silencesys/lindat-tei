@@ -41,7 +41,7 @@ If you are unsure whether a person, place or witness is already mentioned in the
     later crowned King Elessar Telcontar (March 1, 2931 - FO 120 or SR 1541), the 26th King of Arnor and 35th King of Gondor -
     and first High King of Gondor and Arnor since the short reign of Isildur.
   </note>
-  <link xml:lang="eng" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
+  <link xml:lang="en" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
 </person>
 ```
 Each person should be wrapped inside the `person` element with a unique id. It is recommeneded to add prefix as `Person_` to the actual actual ID, so it won't collide with other IDs later.
@@ -49,7 +49,7 @@ Additional descriptive elements can be used. The attribute `sex` can be used to 
 
 ### Name of the person
 ```xml{1,5}
-<persName xml:lang="eng">
+<persName xml:lang="en">
   <forename>Aragorn</forename>
   <genName>II</genName>
   <addName>Elassar</addName>
@@ -136,9 +136,10 @@ The content of this element may be used as an alternative to the more formal spe
 
 ### Age
 ```xml
+<!-- the year is in the story's own calendar (Third Age) -->
 <age value="210" notAfter="3000-01-01">210 years old</age>
 ```
-To describe the age of the person the `age` element can be used. The element can contain only number, or number with additional information. In both cases the attribute `value` should be set to exact age or if it is unknown we can use attributes `notAfter` and `notBefore`. These two attributes should contain valid date in the following format `YYYY-MM-DD`.
+To describe the age of the person the `age` element can be used. The element can contain only number, or number with additional information. The attribute `value` should be set to the age in years. The attributes `notBefore` and `notAfter` do not describe the age itself, they date it: they give the range of dates in which the person had this age. In the example above Aragorn was 210 years old no later than the year 3000. Both attributes should contain valid date in the following format `YYYY-MM-DD`.
 
 ### Faith
 ```xml
@@ -154,7 +155,7 @@ The `note` element can be used to provide further information about the person. 
 
 ### Links to other resources
 ```xml
-<link xml:lang="eng" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
+<link xml:lang="en" target="https://en.wikipedia.org/wiki/Aragorn" type="wiki">Wikipedia</link>
 ```
 The `link` element can be used to provide links to other resources. The attribute `xml:lang` can be used to specify the language of the link. When no `xml:lang` attribute is provided the resource is considered to be in English. The attribute `type` can be used to specify the type of the link. Following types will be supported:
 
@@ -165,6 +166,10 @@ The `link` element can be used to provide links to other resources. The attribut
 | academia | Academia.edu
 | web | For official website
 
+::: warning Not plain TEI
+In standard TEI the `link` element is empty and needs at least two targets. The LINDAT schema allows a `link` with one target and text inside, as shown above. If your file has to validate against plain TEI (`tei_all`), use `<ref type="wiki" target="https://en.wikipedia.org/wiki/Aragorn">Wikipedia</ref>` instead.
+:::
+
 <br>
 
 ::: tip Additional information
@@ -174,13 +179,13 @@ The `person` element is further described in the [TEI documentation guide](https
 ## Describing places
 ```xml
 <place xml:id="Place_UniFr">
-  <placeName xml:lang="fre">Université de Fribourg</placeName>
-  <placeName xml:lang="ger">Universität Freiburg</placeName>
+  <placeName xml:lang="fr">Université de Fribourg</placeName>
+  <placeName xml:lang="de">Universität Freiburg</placeName>
   <settlement>Fribourg</settlement>
   <region>Canton de Fribourg</region>
   <country key="CH">Suisse</country>
   <location>
-    <geo>46.80625, 7.15174</geo>
+    <geo>46.80625 7.15174</geo>
     <address>
       <addrLine>Avenue de l'Europe 20</addrLine>
       <addrLine>CH-1700 Fribourg</addrLine>
@@ -193,9 +198,9 @@ The `place` element should contain information about the geo-political or geogra
 
 ### Place name and/or geographic name
 ```xml
-<placeName xml:lang="fre" type="university">Université de Fribourg</placeName>
+<placeName xml:lang="fr" type="university">Université de Fribourg</placeName>
 <!-- but also -->
-<geogName xml:lang="eng" type="river">Mississippi River</geogName>
+<geogName xml:lang="en" type="river">Mississippi River</geogName>
 ```
 The `placeName` element should be used whenever the geo-political place is described. It should contain the `xml:lang` attribute that describes the language used in the name. The `type` attribute can be used to further describe type of the place eg. `university`, `state`, `city` and so on. For geographical places like rivers, lakes and mountains `geogName` element can be used. Similarly like with `placeName` the `xml:lang` should contain the language abbreviation. In similar fashion as with the `placeName` the `type` attribute can be used to further informn about the type of the place. Possible types: `river`, `lake`, `mountain`, `ridge` etc.
 
@@ -219,12 +224,12 @@ The `region` element contains the name of an administrative unit such as a state
 ```xml
 <country>Suisse</country>
 ```
-The `region` element contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc.
+The `country` element contains the name of a geo-political unit, such as a nation, country, colony, or commonwealth, larger than or administratively superior to a region and smaller than a bloc.
 
 ### Location
 ```xml
 <location>
-  <geo>46.80625, 7.15174</geo>
+  <geo>46.80625 7.15174</geo>
   <address>
     <addrLine>Avenue de l'Europe 20</addrLine>
     <addrLine>CH-1700 Fribourg</addrLine>
@@ -257,11 +262,11 @@ The `place` element is further described in the [TEI documentation guide](https:
 ## Lists of organizations
 ```xml
 <org xml:id="Org_TB">
-  <orgName xml:lang="eng" notAfter="1960">The Silver Beetles</orgName>
-  <orgName xml:lang="eng" notBefore="1960">The Beatles</orgName>
+  <orgName xml:lang="en" notAfter="1960">The Silver Beetles</orgName>
+  <orgName xml:lang="en" notBefore="1960">The Beatles</orgName>
   <location>
     <country>United Kingdom</country>
-    <city>Liverpool</city>
+    <settlement>Liverpool</settlement>
   </location>
   <desc>
     The group, whose best-known line-up comprised John Lennon, Paul McCartney, George Harrison and Ringo Starr, are regarded as the most influential band of all time.
@@ -272,7 +277,7 @@ The `org` element provides information about an identifiable organization such a
 
 ### Name of the organization
 ```xml
-<orgName xml:lang="eng" notAfter="1960">The Silver Beetles</orgName>
+<orgName xml:lang="en" notAfter="1960">The Silver Beetles</orgName>
 ```
 The element should contain an organizational name. The attribute `xml:lang` should contain the language abbreviation. Additional attributes like `notAfter` or `notBefore` can be used if the name of the organization was changed over the time.
 

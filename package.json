@@ -1,6 +1,6 @@
 {
   "name": "lindat-medieval-manuscripts",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "Guidelines for manuscript description incorporating TEI.",
   "main": "index.js",
   "authors": {

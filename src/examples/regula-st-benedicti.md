@@ -4,7 +4,7 @@ The following example contains part of the _Regula sancti Benedicti_ written for
 
 ## What is encoded
 - The title and the publication statement are shortened to contain only necessary information
-- Source description containes one withness with further physical description
+- Source description contains one witness with further physical description
 - Only list of people with basic information is provided
 - The women version of regula is encoded from manuscript, the men version is taken from standard edition and is here only for display without any further linking
 - People and biblical references are encoded using `persName` and `cit` elements and are linked to lists with reference attribute `ref`
@@ -15,27 +15,31 @@ The following example contains part of the _Regula sancti Benedicti_ written for
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="lindat.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title type="main">Regula sancti Benedicti</title>
-            <title type="desc"> cum commentario monialibus adapta</title>
+            <title type="main" xml:lang="la">Regula sancti Benedicti</title>
+            <title type="desc" xml:lang="la">cum commentario monialibus adapta</title>
          </titleStmt>
          <publicationStmt>
             <publisher>manuscriptorium.com</publisher>
+            <pubPlace>
+               <country>Czech Republic</country>
+               <settlement>Prague</settlement>
+            </pubPlace>
+            <date when="2020-10-05">5th October 2020</date>
          </publicationStmt>
          <sourceDesc>
           <listWit>
-            <witness>
-              <msDesc xml:id="IF29en" xml:lang="eng">
+            <witness xml:id="Witness_IF29">
+              <msDesc xml:id="IF29en" xml:lang="en">
                 <msIdentifier>
-                  <country>Bohemia</country>
+                  <country>Czech Republic</country>
                   <settlement>Prague</settlement>
-                  <repository>National Library of the Czech Republic</repository>
+                  <institution>National Library of the Czech Republic</institution>
                   <idno>I F 29</idno>
                 </msIdentifier>
                 <msContents/>
@@ -76,19 +80,19 @@ The following example contains part of the _Regula sancti Benedicti_ written for
   </teiHeader>
   <text>
       <body>
-        <div xml:lang="lat" type="original">
-          <div xml:id="version_women" n="Caput 30">
+        <div xml:lang="la" type="original">
+          <div xml:id="version_women" xml:lang="la" n="Caput 30">
               <head><seg xml:id="lem01">De puellis minori etate, qualiter corripiantur XXX</seg></head>
               <p>
-                Omnis etas <add place="above"><gloss xml:lang="czo">vyek</gloss></add> vel intellectus <add place="above"><gloss xml:lang="czo">rozum</gloss></add> debet proprias habere <seg xml:id="lem02">mensuras</seg> <add place="above"><gloss xml:lang="lat">modos</gloss></add>. Ideoque, quociens <seg xml:id="lem03">puelle</seg> <add place="above"><gloss xml:lang="lat">VII vel IX annorum</gloss></add> vel adolescenciores etate <add place="above"><gloss xml:lang="lat">XIIII vel quindecim annorum</gloss></add>, <seg xml:id="lem04">aut que minus intelligere possunt</seg> <add place="above"><gloss xml:lang="lat">valent</gloss></add> quanta <add place="above"><gloss xml:lang="lat">id est quam magna</gloss></add> pena sit excommunicacionis <add place="above"><gloss xml:lang="lat">separacionis</gloss></add>. <seg xml:id="lem05">Hec tales</seg> <add place="above"><gloss xml:lang="lat">supple puelle</gloss></add>, dum delinqunt <add place="above"><gloss xml:lang="lat">excedunt</gloss></add>, aut ieiuniis nimiis <add place="above"><gloss xml:lang="lat">magnis</gloss></add> affligantur <add place="above"><gloss xml:lang="lat">castigentur</gloss></add> aut acris <add place="above"><gloss xml:lang="lat">duris</gloss></add> verberibus coherceantur <add place="above"><gloss xml:lang="lat">corigatur</gloss></add>, ut sanentur <add place="above"><gloss xml:lang="czo">tyessye pokanye nezly</gloss></add> <add place="above"><gloss xml:lang="lat">miserere mei Deus</gloss></add>.</p>
+                Omnis etas <add place="above"><gloss xml:lang="cs-x-old">vyek</gloss></add> vel intellectus <add place="above"><gloss xml:lang="cs-x-old">rozum</gloss></add> debet proprias habere <seg xml:id="lem02">mensuras</seg> <add place="above"><gloss xml:lang="la">modos</gloss></add>. Ideoque, quociens <seg xml:id="lem03">puelle</seg> <add place="above"><gloss xml:lang="la">VII vel IX annorum</gloss></add> vel adolescenciores etate <add place="above"><gloss xml:lang="la">XIIII vel quindecim annorum</gloss></add>, <seg xml:id="lem04">aut que minus intelligere possunt</seg> <add place="above"><gloss xml:lang="la">valent</gloss></add> quanta <add place="above"><gloss xml:lang="la">id est quam magna</gloss></add> pena sit excommunicacionis <add place="above"><gloss xml:lang="la">separacionis</gloss></add>. <seg xml:id="lem05">Hec tales</seg> <add place="above"><gloss xml:lang="la">supple puelle</gloss></add>, dum delinqunt <add place="above"><gloss xml:lang="la">excedunt</gloss></add>, aut ieiuniis nimiis <add place="above"><gloss xml:lang="la">magnis</gloss></add> affligantur <add place="above"><gloss xml:lang="la">castigentur</gloss></add> aut acris <add place="above"><gloss xml:lang="la">duris</gloss></add> verberibus coherceantur <add place="above"><gloss xml:lang="la">corigatur</gloss></add>, ut sanentur <add place="above"><gloss xml:lang="cs-x-old">tyessye pokanye nezly</gloss></add> <add place="above"><gloss xml:lang="la">miserere mei Deus</gloss></add>.</p>
           </div>
-          <div xml:id="version_men" n="Caput 30">
+          <div xml:id="version_men" xml:lang="la" n="Caput 30">
               <head>De pueris minori aetate, qualiter corripiantur XXX</head>
               <p>
                 Omnis aetas vel intellectus proprias debet habere mensuras. Ideoque, quotiens pueri vel adulescentiores aetate, aut qui minus intellegere possunt quanta poena sit excommunicationis. Hi tales dum delinquunt, aut ieiuniis nimiis affligantur aut acris verberibus coerceantur, ut sanentur.
               </p>
           </div>
-          <div xml:id="commentary">
+          <div xml:id="commentary" xml:lang="la">
               <p corresp="#lem01">
                 Superius egit de penis non distringendo personarum qualitates, sed ne forte crederet alique quod equaliter omnes essent corrigende, puelle, adolescentes, senes, iuvenes, prudentes et insipientes, subponitur hic rubrica de correccione minorum etatis.
               </p>
@@ -102,7 +106,7 @@ The following example contains part of the _Regula sancti Benedicti_ written for
                 Cum dicit "aut que minus intelligere possunt", quantum enim in hanc etatem comprehendit.
               </p>
               <p corresp="#lem05">
-                "Hec tales..." Iste enim due pene videlicet ieiunia et verbera ad coporalem referuntur vindictam, sed quibusdam competit ieiunium et quibusdam flagella, quibus sunt ieiunia contraria debent flagellari virgis, lascive puelle, id est fregerzky, <del>kacz</del> tanecznycze debent nimiis ieiuniis castigari et domari at by nochy neplessaly any <choice><sic>skaly</sic><corr>skakaly</corr></choice>, ut <persName ref="#Person_Job">Yob</persName> dicebat: <cit type="bible"><quote><ref target="http://biblehub.com/multilingual/job/13-27.htm">Posuisti in nervo pedem me<supplied>um</supplied>.</ref></quote><bibl>Job 13,27</bibl></cit>
+                "Hec tales..." Iste enim due pene videlicet ieiunia et verbera ad coporalem referuntur vindictam, sed quibusdam competit ieiunium et quibusdam flagella, quibus sunt ieiunia contraria debent flagellari virgis, lascive puelle, id est fregerzky, <del>kacz</del> tanecznycze debent nimiis ieiuniis castigari et domari at by nochy neplessaly any <choice><sic>skaly</sic><corr>skakaly</corr></choice>, ut <persName ref="#Person_Job">Yob</persName> dicebat: <cit type="bible"><quote><ref target="http://biblehub.com/multilingual/job/13-27.htm">Posuisti in nervo pedem me<supplied reason="omitted-in-original">um</supplied>.</ref></quote><bibl>Job 13,27</bibl></cit>
               </p>
           </div>
          </div>

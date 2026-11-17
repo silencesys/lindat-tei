@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>LINDAT / UŘLS TEI customisation (draft)</title>
+        <respStmt>
+          <resp>ODD derived from the UŘLS TEI Cookbook guidelines (https://lindat.coders.tools/guidelines/)</resp>
+          <name>[maintainer]</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Draft for the Faculty of Arts, Charles University. Not yet published.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Rules taken from the guideline pages: General TEI structure, TEI Header, Witness description,
+           People and places, Bibliography, Text structure, Text corrections, Translations, Language
+           abbreviations, Biblical abbreviations. Rules that a RELAX NG schema cannot express are in
+           lindat.sch.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>LINDAT TEI customisation</head>
+      <p>This customisation keeps the TEI modules the guidelines use and narrows attribute values to the
+         lists given in the guidelines. Generate the RELAX NG schema with Roma (Customize › upload this
+         file › Download › RELAX NG schema) or with Oxygen's "TEI ODD to RELAX NG XML" transformation.</p>
+
+      <schemaSpec ident="lindat" start="TEI" prefix="tei_" docLang="en">
+
+        <!-- ============ Modules used by the guidelines ============ -->
+        <moduleRef key="tei"/>
+        <moduleRef key="core"/>
+        <moduleRef key="header"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="msdescription"/>   <!-- Witness description -->
+        <moduleRef key="namesdates"/>      <!-- People and places -->
+        <moduleRef key="transcr"/>         <!-- Text corrections: subst, supplied, damage, surplus, ex -->
+        <moduleRef key="textcrit"/>        <!-- listWit, witness, app, lem, rdg, lacunaStart/End -->
+        <moduleRef key="linking"/>         <!-- seg, link, standOff -->
+
+        <!-- ============ Language codes ============ -->
+        <!-- xml:lang may only take these BCP 47 tags (as TEI recommends). They replace the guidelines'
+             earlier ISO 639-2/B list; see the README for the old-to-new mapping. Old and Middle Czech
+             have no ISO code, so they use private-use tags. -->
+        <classSpec ident="att.global" type="atts" mode="change">
+          <attList>
+            <attDef ident="xml:lang" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="cs"><desc>Czech</desc></valItem>
+                <valItem ident="cs-x-middle"><desc>Czech, Middle (private-use tag)</desc></valItem>
+                <valItem ident="cs-x-old"><desc>Czech, Old (private-use tag)</desc></valItem>
+                <valItem ident="en"><desc>English</desc></valItem>
+                <valItem ident="enm"><desc>English, Middle</desc></valItem>
+                <valItem ident="ang"><desc>English, Old</desc></valItem>
+                <valItem ident="fr"><desc>French</desc></valItem>
+                <valItem ident="frm"><desc>French, Middle</desc></valItem>
+                <valItem ident="fro"><desc>French, Old</desc></valItem>
+                <valItem ident="de"><desc>German</desc></valItem>
+                <valItem ident="gmh"><desc>German, Middle High</desc></valItem>
+                <valItem ident="goh"><desc>German, Old High</desc></valItem>
+                <valItem ident="grc"><desc>Greek, Ancient</desc></valItem>
+                <valItem ident="el"><desc>Greek, Modern</desc></valItem>
+                <valItem ident="la"><desc>Latin</desc></valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </classSpec>
+
+        <!-- ============ Witness description ============ -->
+        <elementSpec ident="witness" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="objectDesc" mode="change">
+          <attList>
+            <attDef ident="form" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="book"><desc>printed book</desc></valItem>
+                <valItem ident="codex"/>
+                <valItem ident="composite_manuscript"><desc>composed from various manuscripts</desc></valItem>
+                <valItem ident="roll"/>
+                <valItem ident="vellum"/>
+                <!-- used in the Regula sancti Benedicti example -->
+                <valItem ident="other"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="supportDesc" mode="change">
+          <attList>
+            <attDef ident="material" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="parchment"/>
+                <valItem ident="paper"/>
+                <valItem ident="calfskin"/>
+                <valItem ident="goatskin"/>
+                <valItem ident="mixed"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="handNote" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+
+        <!-- ============ People and places ============ -->
+        <elementSpec ident="person" mode="change">
+          <attList>
+            <attDef ident="sex" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="male"/>
+                <valItem ident="female"/>
+                <valItem ident="unknown"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- link: one URL is enough (TEI normally demands two targets), type from a closed list -->
+        <elementSpec ident="link" mode="change">
+          <!-- the guidelines write <link …>Wikipedia</link>: allow text (TEI link is normally empty) -->
+          <content><textNode/></content>
+          <constraintSpec ident="linkTargets3" scheme="schematron" mode="delete"/>
+          <attList>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="wiki"><desc>Wikipedia</desc></valItem>
+                <valItem ident="brit"><desc>Encyclopaedia Britannica</desc></valItem>
+                <valItem ident="academia"/>
+                <valItem ident="web"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- ============ Bibliography ============ -->
+        <elementSpec ident="title" mode="change">
+          <attList>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="main"/>
+                <valItem ident="sub"/>
+                <valItem ident="alt"/>
+                <valItem ident="short"/>
+                <valItem ident="desc"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="biblScope" mode="change">
+          <attList>
+            <attDef ident="unit" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="volume"/>
+                <valItem ident="issue"/>
+                <valItem ident="page"/>
+                <valItem ident="line"/>
+                <valItem ident="chapter"/>
+                <valItem ident="part"/>
+                <valItem ident="column"/>
+                <valItem ident="entry"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- ============ Text structure ============ -->
+        <elementSpec ident="div" mode="change">
+          <attList>
+            <attDef ident="xml:lang" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="lb" mode="change">
+          <attList>
+            <attDef ident="break" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="yes"/>
+                <valItem ident="no"/>
+                <valItem ident="maybe"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="name" mode="change">
+          <attList>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="person"/>
+                <valItem ident="place"/>
+                <valItem ident="org"/>
+                <!-- TEI Header page: name type="author" inside respStmt -->
+                <valItem ident="author"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="measure" mode="change">
+          <attList>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="add">
+                <valItem ident="currency"/>
+                <valItem ident="volume"/>
+                <valItem ident="height"/>
+                <valItem ident="width"/>
+                <valItem ident="weight"/>
+                <valItem ident="depth"/>
+                <valItem ident="area"/>
+                <valItem ident="time"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- cit: one or more types, separated by spaces -->
+        <elementSpec ident="cit" mode="change">
+          <attList>
+            <attDef ident="type" mode="change">
+              <datatype minOccurs="1" maxOccurs="unbounded"><dataRef key="teidata.enumerated"/></datatype>
+              <valList type="closed" mode="add">
+                <valItem ident="ascribed"/>
+                <valItem ident="bible"/>
+                <valItem ident="example"/>
+                <valItem ident="literal"/>
+                <valItem ident="paraphrase"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="seg" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+
+        <!-- ============ Text corrections ============ -->
+        <elementSpec ident="add" mode="change">
+          <attList>
+            <attDef ident="place" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="above"><desc>above the word or line</desc></valItem>
+                <valItem ident="below"><desc>below the word or line</desc></valItem>
+                <valItem ident="lmargin"><desc>left margin</desc></valItem>
+                <valItem ident="rmargin"><desc>right margin</desc></valItem>
+                <valItem ident="interlinear"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="supplied" mode="change">
+          <attList>
+            <attDef ident="reason" mode="change" usage="req">
+              <valList type="closed" mode="add">
+                <valItem ident="omitted-in-original"/>
+                <valItem ident="overbinding"/>
+                <valItem ident="faded-ink"/>
+                <valItem ident="lost-folio"/>
+                <!-- used in the guidelines' own damage example, not in their table -->
+                <valItem ident="burnt-hole-in-original"/>
+                <!-- used in the Somniale example for words added by the translator -->
+                <valItem ident="translation"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <elementSpec ident="gap" mode="change">
+          <attList>
+            <attDef ident="reason" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="cut-out"/>
+                <valItem ident="irrelevant"/>
+                <valItem ident="cancelled"/>
+                <valItem ident="fire"/>
+                <valItem ident="faded"/>
+                <!-- used in the guidelines' own unclear example, not in their table -->
+                <valItem ident="deletion"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- damage: the guidelines give it reason "as gap does"; TEI damage has @extent but no @reason -->
+        <elementSpec ident="damage" mode="change">
+          <attList>
+            <attDef ident="reason" mode="add" usage="opt">
+              <desc>why the text is damaged (project extension)</desc>
+              <datatype><dataRef key="teidata.enumerated"/></datatype>
+              <valList type="closed">
+                <valItem ident="cut-out"/>
+                <valItem ident="irrelevant"/>
+                <valItem ident="cancelled"/>
+                <valItem ident="fire"/>
+                <valItem ident="faded"/>
+                <valItem ident="deletion"/>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+
+        <!-- unclear/@cert: TEI's own scale (high, medium, low, unknown) is used, as decided. -->
+
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

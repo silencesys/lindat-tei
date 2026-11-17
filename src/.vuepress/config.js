@@ -45,6 +45,10 @@ module.exports = {
       {
         text: 'For editors',
         link: '/for-editors/'
+      },
+      {
+        text: 'Changelog',
+        link: '/changelog/'
       }
     ],
     sidebar: {
@@ -109,7 +113,7 @@ module.exports = {
   chainWebpack: (config, isServer) => {
     config.module
       .rule('xml')
-      .test(/\.xml$/)
+      .test(/\.(xml|odd|sch|rng)$/)
       .use('file-loader')
       .loader('file-loader')
       .options({

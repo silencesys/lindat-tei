@@ -32,7 +32,7 @@ There are two primary elements that should be used to structure and divide text.
 
 ### Divs
 ```xml
-<div xml:id="div1" xml:lang="lat" hand="Hand_Unknown-1"></div>
+<div xml:id="div1" xml:lang="la" hand="#Hand_Unknown-1"></div>
 ```
 `Div`s should be used to divide text to bigger chunks like chapters or whatever works for your text. They can be also freely nested.
 Attributes like `xml:id` and `hand` are optional. `xml:id` can be later used to link text division with translation, `hand` can be
@@ -41,14 +41,14 @@ contain valid language code, see [the table](./language-codes.md).
 
 ### Headings
 ```xml
-<head xml:lang="lat" hand="Hand_Unknown-1"></head>
+<head xml:lang="la" hand="#Hand_Unknown-1"></head>
 ```
-The `head` element should be used for any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. The `xml:lang` and `hand` attributes can be used to further describe the properties of the header. Language should be valid ISO-639 language abbreviation, see [this list](./language-codes.md) and `hand` should be linked to an existing hand ID in the `<handDesc>` in the `<teiHeader>`.
+The `head` element should be used for any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. The `xml:lang` and `hand` attributes can be used to further describe the properties of the header. Language should be a valid language code, see [this list](./language-codes.md) and `hand` should point to an existing hand ID in the `<handDesc>` in the `<teiHeader>`, written with `#` (e.g. `hand="#Hand_Unknown-1"`).
 
 
 ### Paragraphs
 ```xml
-<p xml:id="p13" xml:lang="lat" hand="Hand_Unknown-1"></p>
+<p xml:id="p13" xml:lang="la" hand="#Hand_Unknown-1"></p>
 ```
 Paragraph tag should be used to divide text into paragraphs. Unlike the divs the attribute `xml:id` is mandatory for paragraphs if you consider
 providing translation of the text. The `xml:id` attribute will be used to identify paragraphs across different language variants. The `xml:lang`
@@ -104,13 +104,13 @@ This element should be used only for a proper noun or proper-noun phrase referri
 
 ### Place name
 ```xml
-<placeName ref="#UniFr">Université de Fribourg</placeName>
+<placeName ref="#Place_UniFr">Université de Fribourg</placeName>
 ```
 It should contain an absolute or relative place name. **The `placeName` element is a equivalent to `<name type="place"></name>`.** Additional level of description can be achieved in a similar fashion as with the person, see [describing places](./people-and-places.md#describing-places). The `ref` attribute should be used to link the place to the `listPlace` in the `teiHeader`.
 
 ### Organization name
 ```xml
-<orgName ref="#UniFr">Université de Fribourg</orgName>
+<orgName ref="#Org_UniFr">Université de Fribourg</orgName>
 ```
 It should contain an organization name. **The `orgName` element is a equivalent to `<name type="org"></name>`.** Additional level of description can be achieved in a similar fashion as with the person and place, see [list of organizations](./people-and-places.md#list-of-organizations). The `ref` attribute should be used to link the place to the `listOrg` in the `teiHeader`.
 
@@ -139,9 +139,9 @@ When `from`, `to` is used `when` can be omitted, this applies also for `notBefor
 
 #### Measures
 ```xml
-<measure type="currency" units="gold">12 gold</measure>
+<measure type="currency" unit="gold">12 gold</measure>
 ```
-Measures should be used whenever a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name is found in text. The attribute `type` should be used to further describe type of the measure. Units can be also described within the attribute `units`
+Measures should be used whenever a word or phrase referring to some quantity of an object or commodity, usually comprising a number, a unit, and a commodity name is found in text. The attribute `type` should be used to further describe type of the measure. Units can be also described within the attribute `unit`.
 
 | Type | Description
 | :- | :-
@@ -176,7 +176,7 @@ Contains a quotation from some other document, together with a bibliographic ref
 | Type | Description
 | :- | :-
 | ascribed | If the citation is ascribed to someone
-| biblie | Should be used only for biblical citations
+| bible | Should be used only for biblical citations
 | example | If the citation serves as an example
 | literal | Citation is literal
 | paraphrase | The text was paraphrased
@@ -248,7 +248,7 @@ In case of a biblical citations with descriptions were used, following snippet s
 Bernardus: <cit type="ascribed">
 <quote>Auferatur malus ne generet malos. Non potest arbor mala
 fructus nisi malos facere.</quote>
-<ref target="#bernEpist"><bibl><author>Bern.</author>,
+<ref target="#BernEpist"><bibl><author>Bern.</author>,
 <title>Epist.</title>, 102 (VIII, 257-8)</bibl></ref>
 </cit>
 ```
@@ -259,7 +259,7 @@ is also refering to the unique ID used in the bibliographic section of our docum
 
 #### Bibliographic citation
 ```xml
-<bibl></bible>
+<bibl></bibl>
 ```
 As was described in the example above, this element is used to contain a loosely-structured bibliographic citation with
 sub-components like `author`, `title` and so on, see [bibliography](./bibliography.md) for more information.
@@ -267,14 +267,14 @@ sub-components like `author`, `title` and so on, see [bibliography](./bibliograp
 ## Glosses and segments
 ### Glosses
 ```xml
-<gloss xml:lang="czo">vyek</gloss>
+<gloss xml:lang="cs-x-old">vyek</gloss>
 ```
 Glosses should be marked with `gloss` element with language description in the `xml:lang` attribute if is different than the original text.
 
 ::: warning Glosses and additions
 Consider wrapping the glosses within an addition if they're not part of the main text, because only `add` element can describe placing of the gloss.
 ```xml
-Omnis etas <add place="above"><gloss xml:lang="czo">vyek</gloss></add>
+Omnis etas <add place="above"><gloss xml:lang="cs-x-old">vyek</gloss></add>
 ```
 :::
 
@@ -308,7 +308,7 @@ Contains one entry in a critical apparatus, with an optional lemma and usually o
 </lem>
 ```
 Contains the lemma, or base text, of a textual variation. This element is optional as the apparatus entry can contain only readings without lemma suggestion.
-The attribute `wit` should be used to identify the source in the list of witnesses `listWit`, see [witness description](./source-description.md).
+The attribute `wit` should be used to identify the source in the list of witnesses `listWit`, see [witness description](./witness-description.md).
 
 #### Readings
 ```xml
@@ -323,7 +323,7 @@ Contains a single reading within a textual variation. Likewise the `lemma` eleme
 Note that IDs of different sources with the same reading are separated withspace.
 :::
 
-Readings can contain additions, corrections and deletions, all these topics are further described on the [Text corrections](./additions-deletions.md) page.
+Readings can contain additions, corrections and deletions, all these topics are further described on the [Text corrections](./text-corrections.md) page.
 
 ## Lacuna
 ```xml{4}

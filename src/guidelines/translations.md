@@ -3,16 +3,16 @@
 To provide translation with the original Latin text the document's body should be divided into two parts, the original and translation. For that purpose
 `div` elements should be used as shown in the example below. The `type` attribute and the `xml:lang` are considered mandatory as they provide information
 about the text contained inside. For translations should be `type` set to value `translation` and for the original text to `original`. The `xml:lang` attribute
-must contain valida ISO-639 language abbreviation, [see the table](./language-codes.md).
+must contain a valid language code, [see the table](./language-codes.md).
 
 ```xml{7-10}
 <text>
   <body>
-    <div xml:lang="lat" type="original">
+    <div xml:lang="la" type="original">
     <p xml:id="p1">Arma portare in sompno honorem significat</p>
     <!-- and so on... -->
     </div>
-    <div xml:lang="cze" type="translation">
+    <div xml:lang="cs" type="translation">
       <p ana="#p1">Nosit zbraně ve snu značí slávu</p>
       <!-- a tak dále... -->
     </div>

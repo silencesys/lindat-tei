@@ -9,7 +9,7 @@ All bibliographic citations should follow Chicago Manual of Style. For more deta
 ```xml
 <listBibl>
   <head>Select bibliography</head>
-  <bibl xml:id="Bib_RE_TAC" n="1">Richard Ellmann (ed), The Artist as Critic: Critical Writings of Oscar Wilde (Chicago 1982).</bibl>
+  <bibl xml:id="Bibl_RE_TAC" n="1" type="book">Richard Ellmann (ed), The Artist as Critic: Critical Writings of Oscar Wilde (Chicago 1982).</bibl>
   <!-- or -->
   <biblStruct>
     <analytic>
@@ -22,7 +22,7 @@ All bibliographic citations should follow Chicago Manual of Style. For more deta
         <pubPlace>London</pubPlace>
         <publisher>Everyman</publisher>
         <date>1930</date>
-        <biblScope type="pages">450-509</biblScope>
+        <biblScope unit="page">450-509</biblScope>
       </imprint>
     </monogr>
   </biblStruct>
@@ -45,7 +45,7 @@ All bibliographic citations should follow Chicago Manual of Style. For more deta
     <org xml:id="catholic-church"></org>
   </listOrg>
   <listBibl>
-    <bibl xml:id="Bib_RE_TAC" n="1"></bibl>
+    <bibl xml:id="Bibl_RE_TAC" n="1" type="book"></bibl>
   </listBibl>
 </sourceDesc>
 ```
@@ -77,7 +77,7 @@ The `bibl` element should be used if simple textual descriptions of bibliography
 ```
 The `biblStruct` element should be used for structured descriptions of bibliographic information. Likewise the `bibl` element it should be used `xml:id` to provide a unique identificator of the record and `n` attribute to number the record inside the list.
 
-Both `bibl` and `biblStruct` element should have set `type` attribute specifying the type of the bibliographic record. See table below for available types: `monography`, `article`, `thesis`, `dissertation`, `journal`, `edition`.
+Both `bibl` and `biblStruct` element should have set `type` attribute specifying the type of the bibliographic record. Available types: `monography`, `book`, `article`, `thesis`, `dissertation`, `journal`, `edition`.
 
 ::: tip
 The ID of the `bibl` and `biblStruct` elements should have different prefixes for different lists.
@@ -118,7 +118,7 @@ The `author` element can contain element `persName` and be linked to a predefine
 
 ### Title
 ```xml
-<title xml:lang="eng" level="m" type="main">Plays, Prose Writings and Poems</title>
+<title xml:lang="en" level="m" type="main">Plays, Prose Writings and Poems</title>
 ```
 The `title` element is mandatory and must be present in both `analytic` and `monogr`. It should contain the title of the bibligoraphic record and different level should be noted in the `level` attribute. The attribute `type` should further specify the type of the title. For example, books usually have main title and subtitle. It is also recommended to keep information about the language of the title.
 
@@ -141,8 +141,8 @@ The `title` element is mandatory and must be present in both `analytic` and `mon
 ::: tip More than one title element
 There can be more than one title element if the `type` attribute is different.
 ```xml
-<title xml:lang="eng" level="m" type="main">Dreams and Visions in the Early Middle Ages</title>
-<title xml:lang="eng" level="m" type="sub">The Reception and Use of Patristic Ideas, 400–900</title>
+<title xml:lang="en" level="m" type="main">Dreams and Visions in the Early Middle Ages</title>
+<title xml:lang="en" level="m" type="sub">The Reception and Use of Patristic Ideas, 400–900</title>
 ```
 :::
 

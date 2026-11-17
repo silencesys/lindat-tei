@@ -106,7 +106,7 @@ Contains an overview of the available information concerning some aspect of an i
 ```xml
 <msItem n="1">
   <locus from="4v" to="23r">ff. 4v-23r</locus>
-  <title xml:lang="lat">Somniale Danielis</title>
+  <title xml:lang="la">Somniale Danielis</title>
 </msItem>
 ```
 Describes an individual work or item within the intellectual content of a manuscript, manuscript part, or other object. The order of elements
@@ -127,10 +127,10 @@ In case you will use locus to link to images, please include these images with y
 
 #### Title
 ```xml
-<title xml:lang="lat">Somniale Danielis</title>
+<title xml:lang="la">Somniale Danielis</title>
 ```
 The element must always contain the title of the document which is present in the manuscript, if there is any. Similarly
-like in previous cases the `xml:lang` attribute must contain valid ISO-639-3 language code.
+like in previous cases the `xml:lang` attribute must contain valid language code.
 For list of language codes see [language codes](./language-codes.md).
 
 ## Physical Description
@@ -164,6 +164,7 @@ The `objectDesc` element is used to group together those parts of the physical d
 | composite_manuscript | In case the witness is composed from various manuscripts |
 | roll |  |
 | vellum |  |
+| other | Any other form. |
 
 #### Material
 ```xml
@@ -231,7 +232,7 @@ See example below.
 <history>
   <origin></origin>
   <provenance></provenance>
-  <acquistion></acquisition>
+  <acquisition></acquisition>
 </history>
 ```
 The above elements are used to record information about the history of a manuscript. _This element is optional._
@@ -266,7 +267,7 @@ rules as any other date element, see [this example](./tei-header.md#date).
 
 ### Provenance
 ```xml
-<p>Given to <name type=“person“>W.Olleyf</name> by <name type=“person“>William Ebchester</name>, Prior (1446-56) and later belonged to <name type=“person“>Henry Dalton</name>, Prior of <name type=“place“>Holy Island (Lindisfarne)</name> according to inscriptions on ff. 4v and 5.</p>
+<p>Given to <name type="person">W.Olleyf</name> by <name type="person">William Ebchester</name>, Prior (1446-56) and later belonged to <name type="person">Henry Dalton</name>, Prior of <name type="place">Holy Island (Lindisfarne)</name> according to inscriptions on ff. 4v and 5.</p>
 ```
 Contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, a manuscript part, or another object after its creation but before its acquisition. They should be written in prose inside a paragraph `<p>` and may contain additional tags.
 
@@ -286,8 +287,8 @@ Names can also refer to predefined people or places with `ref` attribute.
 
 ### Acquisition
 ```xml
-<acquistion>
-  <p>Left to the <name type=“place“> Bodelian</name> by <name type=“person“>Richard Rawlinson</name> in 1775.</p>
+<acquisition>
+  <p>Left to the <name type="place"> Bodelian</name> by <name type="person">Richard Rawlinson</name> in 1775.</p>
 </acquisition>
 ```
 Contains any descriptive or other information concerning the process by which a manuscript or manuscript part or other object entered the holding institution. Similarly as with the [provenance](#provenance) additional elements can be used. Should be written in prose inside a paragraph tag `<p>`.
