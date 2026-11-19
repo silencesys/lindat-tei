@@ -27,8 +27,8 @@ Since [version 2.0.0](/changelog/) the guidelines come with a schema that checks
 | <a href="/files/ff-medieval_cuni-tei.odd" download>ff-medieval_cuni-tei.odd</a> | ODD source of the schema, only for schema maintainers |
 
 ```xml
-<?xml-model href="ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="ff-medieval_cuni-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://medieval-tei.humanities.tools/files/ff-medieval_cuni-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://medieval-tei.humanities.tools/files/ff-medieval_cuni-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
 
 What the schema checks, how to validate a file and how the schema differs from plain TEI is described in [Schema and validation](./schema.md).
