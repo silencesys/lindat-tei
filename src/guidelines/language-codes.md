@@ -4,12 +4,14 @@ The `xml:lang` attribute must contain a language tag in the **BCP 47** format, a
 
 | Language | Code | Previously used | Note |
 |:-|:-:|:-:|:- |
+| Celtic languages | cel | | for Celtic text not attributable to one language |
 | Czech | cs | cze |  |
 | Czech, Middle | cs-x-middle | czm | ca. 1500-1700 |
 | Czech, Old | cs-x-old | czo | ca. 1200-1500 |
 | English | en | eng |  |
 | English, Middle | enm | enm | ca. 1100-1500 |
 | English, Old | ang | ang | ca. 450-1100 |
+| Finnish | fi | | |
 | French | fr | fre |  |
 | French, Middle | frm | frm | ca. 1400-1600 |
 | French, Old | fro | fro | ca. 842 - 1400 |
@@ -18,6 +20,9 @@ The `xml:lang` attribute must contain a language tag in the **BCP 47** format, a
 | German, Old High | goh | goh | ca.  750-1050 |
 | Greek, Ancient | grc | grc | to 1453 |
 | Greek, Modern | el | gre | after 1453 |
+| Irish | ga | | after ca. 1200 |
+| Irish, Middle | mga | | ca. 900-1200 |
+| Irish, Old | sga | | to ca. 900 |
 | Latin | la | lat |  |
 
 ::: warning Changed in version 2.0.0

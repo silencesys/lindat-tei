@@ -48,12 +48,14 @@
           <attList>
             <attDef ident="xml:lang" mode="change">
               <valList type="closed" mode="add">
+                <valItem ident="cel"><desc>Celtic languages</desc></valItem>
                 <valItem ident="cs"><desc>Czech</desc></valItem>
                 <valItem ident="cs-x-middle"><desc>Czech, Middle (private-use tag)</desc></valItem>
                 <valItem ident="cs-x-old"><desc>Czech, Old (private-use tag)</desc></valItem>
                 <valItem ident="en"><desc>English</desc></valItem>
                 <valItem ident="enm"><desc>English, Middle</desc></valItem>
                 <valItem ident="ang"><desc>English, Old</desc></valItem>
+                <valItem ident="fi"><desc>Finnish</desc></valItem>
                 <valItem ident="fr"><desc>French</desc></valItem>
                 <valItem ident="frm"><desc>French, Middle</desc></valItem>
                 <valItem ident="fro"><desc>French, Old</desc></valItem>
@@ -62,6 +64,9 @@
                 <valItem ident="goh"><desc>German, Old High</desc></valItem>
                 <valItem ident="grc"><desc>Greek, Ancient</desc></valItem>
                 <valItem ident="el"><desc>Greek, Modern</desc></valItem>
+                <valItem ident="ga"><desc>Irish</desc></valItem>
+                <valItem ident="mga"><desc>Irish, Middle</desc></valItem>
+                <valItem ident="sga"><desc>Irish, Old</desc></valItem>
                 <valItem ident="la"><desc>Latin</desc></valItem>
               </valList>
             </attDef>

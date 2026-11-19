@@ -2,6 +2,11 @@
 
 All notable changes to these guidelines, the schema and the templates.
 
+## Unreleased
+
+### Added
+- Language codes `cel` (Celtic languages), `fi` (Finnish), `ga` (Irish), `mga` (Middle Irish) and `sga` (Old Irish), see [Language abbreviations](../guidelines/language-codes.md).
+
 ## 2.0.0 <Badge text="17 November 2026"/>
 
 The guidelines now come with a schema, and the rules on the pages were corrected to match it. **Files encoded under version 1 will not pass the schema until they are updated**, see [What to change in existing files](#what-to-change-in-existing-files).
